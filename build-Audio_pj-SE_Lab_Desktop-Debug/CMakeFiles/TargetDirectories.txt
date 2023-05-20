@@ -1,0 +1,9 @@
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/install.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/install/local.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/install/strip.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen_timestamp_deps.dir
+C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen.dir
