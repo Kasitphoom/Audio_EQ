@@ -104,19 +104,6 @@
 YOUR FEEL'N</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>720</y>
-      <width>71</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
