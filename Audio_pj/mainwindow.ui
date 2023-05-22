@@ -131,6 +131,19 @@ QGraphicsView::frame {
 }</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>710</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

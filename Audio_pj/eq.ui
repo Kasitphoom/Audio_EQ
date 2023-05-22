@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EQ</class>
+ <widget class="QMainWindow" name="EQ">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 0, 4);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>60</y>
+      <width>231</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>390</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

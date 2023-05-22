@@ -1,15 +1,16 @@
 {
-	"BUILD_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj",
+	"BUILD_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj",
 	"CMAKE_EXECUTABLE" : "C:/msys64/ucrt64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj/CMakeLists.txt",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/CMakeLists.txt",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/.qtc/package-manager/auto-setup.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineSystem.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeSystem.cmake.in",
-		"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.25.2/CMakeSystem.cmake",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.26.3/CMakeSystem.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeNinjaFindMake.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake",
@@ -60,7 +61,7 @@
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.26.3/CMakeCXXCompiler.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake",
@@ -75,7 +76,7 @@
 		"C:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeRCCompiler.cmake.in",
-		"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.25.2/CMakeRCCompiler.cmake",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.26.3/CMakeRCCompiler.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeTestRCCompiler.cmake",
@@ -91,7 +92,7 @@
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/Internal/FeatureTesting.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/3.26.3/CMakeCXXCompiler.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
@@ -149,12 +150,6 @@
 		"C:/msys64/ucrt64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6/Qt6Dependencies.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/FindThreads.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/CheckLibraryExists.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/CheckIncludeFileCXX.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/CheckCXXSourceCompiles.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
-		"C:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
@@ -219,6 +214,7 @@
 		"C:/msys64/ucrt64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake",
+		"C:/msys64/ucrt64/lib/cmake/Qt6Core/QtInstallPaths.cmake",
 		"C:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake",
@@ -306,21 +302,27 @@
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj",
-	"DEP_FILE" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/deps",
+	"CMAKE_SOURCE_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj",
+	"DEP_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Audio_pj_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj/mainwindow.h",
+			"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/eq.h",
+			"MU",
+			"EWIEGA46WW/moc_eq.cpp",
+			null
+		],
+		[
+			"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -352,50 +354,48 @@
 		"C:/msys64/ucrt64/include/qt6/QtWidgets",
 		"C:/msys64/ucrt64/include/qt6/QtGui",
 		"C:/msys64/ucrt64/include",
-		"C:/msys64/ucrt64/include/c++/12.2.0",
-		"C:/msys64/ucrt64/include/c++/12.2.0/x86_64-w64-mingw32",
-		"C:/msys64/ucrt64/include/c++/12.2.0/backward",
-		"C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
-		"C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
+		"C:/msys64/mingw64/include/c++/12.2.0",
+		"C:/msys64/mingw64/include/c++/12.2.0/x86_64-w64-mingw32",
+		"C:/msys64/mingw64/include/c++/12.2.0/backward",
+		"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
+		"C:/msys64/mingw64/include",
+		"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
 		"Q_OBJECT",
 		"Q_GADGET",
-		"Q_GADGET_EXPORT",
 		"Q_NAMESPACE",
-		"Q_NAMESPACE_EXPORT"
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT"
 	],
 	"MOC_OPTIONS" : [],
 	"MOC_PATH_PREFIX" : false,
 	"MOC_PREDEFS_CMD" : 
 	[
-		"C:/msys64/ucrt64/bin/g++.exe",
+		"C:/msys64/mingw64/bin/g++.exe",
 		"-dM",
 		"-E",
 		"-c",
 		"C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/msys64/ucrt64/share/qt6/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/msys64/ucrt64/share/qt6/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
-	"QT_VERSION_MINOR" : 4,
-	"SETTINGS_FILE" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen.dir/AutogenUsed.txt",
+	"QT_VERSION_MINOR" : 5,
+	"SETTINGS_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/CMakeFiles/Audio_pj_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/eq.cpp", "MU", null ],
+		[ "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/main.cpp", "MU", null ],
 		[
-			"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj/mainwindow.cpp",
+			"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/mainwindow.cpp",
 			"MU",
 			null
 		]
