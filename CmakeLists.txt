@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 3.15)
+project(AudioEQ)
+
+add_executable(AudioEQ test/test.cpp)
+
+file(COPY ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Set the include directories
+target_include_directories(AudioEQ PRIVATE ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/include)
+
+# Set the library directories
+link_directories(${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib)
+
+message(STATUS "CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib")
+
+# Link the SDL2 libraries
+target_link_libraries(AudioEQ PRIVATE
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2main.a
+    -lkernel32
+    -luser32
+    -lgdi32
+    -lwinspool
+    -lshell32
+    -lole32
+    -loleaut32
+    -luuid
+    -lcomdlg32
+    -ladvapi32
+)
+
+# Set the C++ standard to C++11 or higher if needed
+set_target_properties(AudioEQ PROPERTIES CXX_STANDARD 11)
