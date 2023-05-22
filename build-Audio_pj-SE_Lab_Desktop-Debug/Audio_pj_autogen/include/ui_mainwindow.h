@@ -11,12 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
-#include <QtWidgets/QListWidget>
+#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,50 +24,77 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QFrame *frame;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QListWidget *listWidget;
+    QLabel *label;
+    QLabel *label_2;
+    QGraphicsView *graphicsView;
     QPushButton *pushButton;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(600, 509);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(89, 241, 255);"));
+        MainWindow->resize(400, 800);
+        MainWindow->setMinimumSize(QSize(400, 800));
+        MainWindow->setMaximumSize(QSize(400, 800));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(144, 175, 196);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(170, 60, 231, 301));
-        frame->setAutoFillBackground(false);
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(419, 109, 141, 251));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 139, 249));
-        listWidget = new QListWidget(scrollAreaWidgetContents);
-        new QListWidgetItem(listWidget);
-        new QListWidgetItem(listWidget);
-        new QListWidgetItem(listWidget);
-        listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(0, 0, 141, 191));
-        scrollArea->setWidget(scrollAreaWidgetContents);
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(-95, -174, 303, 303));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(20);
+        sizePolicy.setVerticalStretch(20);
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
+        label->setMinimumSize(QSize(303, 303));
+        label->setMaximumSize(QSize(303, 303));
+        label->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background-color: rgb(95, 132, 161);\n"
+"	border-radius: 151px;\n"
+"}"));
+        label->setFrameShape(QFrame::NoFrame);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(20, 20, 151, 81));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Bahnschrift Condensed")});
+        font.setPointSize(27);
+        font.setBold(true);
+        font.setItalic(false);
+        font.setUnderline(false);
+        font.setStrikeOut(false);
+        font.setKerning(true);
+        font.setStyleStrategy(QFont::PreferDefault);
+        label_2->setFont(font);
+        label_2->setTabletTracking(false);
+        label_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	background-color: transparent;\n"
+"	color: #1A4568\n"
+"}"));
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName("graphicsView");
+        graphicsView->setGeometry(QRect(70, 360, 256, 192));
+        graphicsView->setStyleSheet(QString::fromUtf8("QGraphicsView {\n"
+"    border: none;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QGraphicsView::viewport {\n"
+"    background-color: transparent;\n"
+"    border-radius: 80px;\n"
+"}\n"
+"\n"
+"QGraphicsView::frame {\n"
+"    border-radius: 40px;\n"
+"    border-width: 2px;\n"
+"    border-color: black;\n"
+"}"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(60, 130, 111, 31));
+        pushButton->setGeometry(QRect(90, 230, 93, 29));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 600, 26));
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
@@ -82,17 +107,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-
-        const bool __sortingEnabled = listWidget->isSortingEnabled();
-        listWidget->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
-        ___qlistwidgetitem->setText(QCoreApplication::translate("MainWindow", "New Item", nullptr));
-        QListWidgetItem *___qlistwidgetitem1 = listWidget->item(1);
-        ___qlistwidgetitem1->setText(QCoreApplication::translate("MainWindow", "New Item", nullptr));
-        QListWidgetItem *___qlistwidgetitem2 = listWidget->item(2);
-        ___qlistwidgetitem2->setText(QCoreApplication::translate("MainWindow", "New Item", nullptr));
-        listWidget->setSortingEnabled(__sortingEnabled);
-
+        label->setText(QString());
+        label_2->setText(QCoreApplication::translate("MainWindow", "DISCOVER \n"
+"YOUR FEEL'N", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 

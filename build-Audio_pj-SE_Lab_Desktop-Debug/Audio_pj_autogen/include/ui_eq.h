@@ -62,7 +62,7 @@ public:
 
     void retranslateUi(QMainWindow *EQ)
     {
-        EQ->setWindowTitle(QCoreApplication::translate("EQ", "EQ", nullptr));
+        EQ->setWindowTitle(QCoreApplication::translate("EQ", "MainWindow", nullptr));
         pushButton->setText(QCoreApplication::translate("EQ", "PushButton", nullptr));
     } // retranslateUi
 
