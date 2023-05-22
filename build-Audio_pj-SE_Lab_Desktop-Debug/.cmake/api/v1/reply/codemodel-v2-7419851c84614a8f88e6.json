@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-5948cd90a9f28169a775.json",
+					"jsonFile" : "directory-.-Debug-db36bddd2bcd0a12177b.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,21 +44,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Audio_pj::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Audio_pj-Debug-f290c7937a9bae7ec9aa.json",
+					"jsonFile" : "target-Audio_pj-Debug-426936f895414ab9395b.json",
 					"name" : "Audio_pj",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Audio_pj_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Audio_pj_autogen-Debug-285ffe9c101400c3c151.json",
+					"jsonFile" : "target-Audio_pj_autogen-Debug-828d830ac185e18fcd72.json",
 					"name" : "Audio_pj_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Audio_pj_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Audio_pj_autogen_timestamp_deps-Debug-21e3f40410bd6a16b406.json",
+					"jsonFile" : "target-Audio_pj_autogen_timestamp_deps-Debug-50a44aae95be32df2adc.json",
 					"name" : "Audio_pj_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
@@ -68,12 +68,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
-		"source" : "C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/Audio_pj"
+		"build" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug",
+		"source" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }

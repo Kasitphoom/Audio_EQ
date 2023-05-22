@@ -1,0 +1,21 @@
+# ninja log v5
+16	39	0	CMakeFiles/clean.additional	cad4ede3e236a9a7
+251	2138	7064494885019936	CMakeFiles/Audio_pj.dir/mainwindow.cpp.obj	8d61a5b6b3f432e2
+2503	2684	7064494451352717	Audio_pj.exe	603462eca8b253f8
+446	2242	7064504768582482	CMakeFiles/Audio_pj.dir/Audio_pj_autogen/mocs_compilation.cpp.obj	acb81b23b96214ae
+450	2200	7064504768163116	CMakeFiles/Audio_pj.dir/main.cpp.obj	fbfa690857d6ad61
+39	49	0	clean	c0505d4284e53968
+25	446	7064504750099700	C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/mocs_compilation.cpp	ee5631642fb2f625
+25	446	7064504750099700	C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/timestamp	ee5631642fb2f625
+25	446	7064504750099700	Audio_pj_autogen/mocs_compilation.cpp	ee5631642fb2f625
+456	2336	7064504769525275	CMakeFiles/Audio_pj.dir/eq.cpp.obj	c6bbc3ff1864cb4f
+25	446	7064504750099700	Audio_pj_autogen/timestamp	ee5631642fb2f625
+30	469	7064505005056419	Audio_pj_autogen/timestamp	ee5631642fb2f625
+30	469	7064505005056419	Audio_pj_autogen/mocs_compilation.cpp	ee5631642fb2f625
+30	469	7064505005056419	C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/timestamp	ee5631642fb2f625
+30	469	7064505005056419	C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/mocs_compilation.cpp	ee5631642fb2f625
+473	2109	7064505022004188	CMakeFiles/Audio_pj.dir/main.cpp.obj	fbfa690857d6ad61
+469	2179	7064505022698963	CMakeFiles/Audio_pj.dir/Audio_pj_autogen/mocs_compilation.cpp.obj	acb81b23b96214ae
+481	2260	7064505023479424	CMakeFiles/Audio_pj.dir/eq.cpp.obj	c6bbc3ff1864cb4f
+476	2503	7064505025942549	CMakeFiles/Audio_pj.dir/mainwindow.cpp.obj	8d61a5b6b3f432e2
+2503	2678	7064505027647349	Audio_pj.exe	603462eca8b253f8
