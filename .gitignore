@@ -20,18 +20,11 @@
 *.mod
 *.smod
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
 # Executables
 *.exe
 *.out
 *.app
 
 # build folder
-build/
-*/build/
-build-Audio_pj-SE-Desktop_Qt_5_12_0_MinGW_64_bit-Debug/
+**/build/
+build-Audio_pj-SE_Lab_Desktop-Debug/
