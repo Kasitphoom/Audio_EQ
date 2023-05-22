@@ -104,31 +104,17 @@
 YOUR FEEL'N</string>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>360</y>
-      <width>256</width>
-      <height>192</height>
+      <x>60</x>
+      <y>720</y>
+      <width>71</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QGraphicsView {
-    border: none;
-    background-color: transparent;
-}
-
-QGraphicsView::viewport {
-    background-color: transparent;
-    border-radius: 80px;
-}
-
-QGraphicsView::frame {
-    border-radius: 40px;
-    border-width: 2px;
-    border-color: black;
-}</string>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
   </widget>
