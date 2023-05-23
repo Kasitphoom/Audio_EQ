@@ -383,6 +383,44 @@ YOUR FEEL'N</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>140</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <stylestrategy>PreferDefault</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">letter-spacing: -1px;
+font-style: normal;
+font-weight: 2000;
+font-size: 25px;
+line-height: 38px;
+text-align: center;
+color: #1A4568;
+</string>
+    </property>
+    <property name="text">
+     <string>DISCOVER</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

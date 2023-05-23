@@ -10,8 +10,24 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>500</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Equalizer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/Dis_pic.png</normaloff>:/Dis_pic.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -701,12 +717,17 @@ color: #FFFFFF;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-style: normal;
+      <string notr="true">QPushButton {
+font-style: normal;
 font-weight: 2000;
 font-size: 16px;
 line-height: 24px;
 text-align: left;
 color: #5F84A1;
+}
+QPushButton:hover {
+color: rgb(158, 170, 189)
+}
 </string>
      </property>
      <property name="text">
@@ -723,12 +744,17 @@ color: #5F84A1;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-style: normal;
+      <string notr="true">QPushButton {
+font-style: normal;
 font-weight: 2000;
 font-size: 16px;
 line-height: 24px;
 text-align: left;
 color: #5F84A1;
+}
+QPushButton:hover {
+color: rgb(158, 170, 189)
+}
 </string>
      </property>
      <property name="text">
@@ -745,12 +771,17 @@ color: #5F84A1;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-style: normal;
+      <string notr="true">QPushButton {
+font-style: normal;
 font-weight: 2000;
 font-size: 16px;
 line-height: 24px;
 text-align: left;
 color: #5F84A1;
+}
+QPushButton:hover {
+color: rgb(158, 170, 189)
+}
 </string>
      </property>
      <property name="text">
@@ -767,12 +798,17 @@ color: #5F84A1;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-style: normal;
+      <string notr="true">QPushButton {
+font-style: normal;
 font-weight: 2000;
 font-size: 16px;
 line-height: 24px;
 text-align: left;
 color: #5F84A1;
+}
+QPushButton:hover {
+color: rgb(158, 170, 189)
+}
 </string>
      </property>
      <property name="text">
@@ -789,18 +825,53 @@ color: #5F84A1;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-style: normal;
+      <string notr="true">QPushButton {
+font-style: normal;
 font-weight: 2000;
 font-size: 16px;
 line-height: 24px;
 text-align: left;
 color: #5F84A1;
+}
+QPushButton:hover {
+color: rgb(158, 170, 189)
+}
 </string>
      </property>
      <property name="text">
       <string>ROCK</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>430</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+font-style: normal;
+font-weight: 2000;
+font-size: 16px;
+line-height: 41px;
+letter-spacing: -1px;
+background-color: rgb(26, 69, 104);
+color: #FFFFFF;
+}
+QPushButton:hover
+{
+color: #808080;
+background-color: rgb(255, 255, 255);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>APPLY</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -815,6 +886,8 @@ color: #5F84A1;
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

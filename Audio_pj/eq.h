@@ -16,7 +16,7 @@ public:
     ~EQ();
 
 private slots:
-    void on_verticalSlider_valueChanged(int value);
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::EQ *ui;

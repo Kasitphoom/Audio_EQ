@@ -39,31 +39,31 @@ namespace {
 struct qt_meta_stringdata_CLASSEQENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSEQENDCLASS = QtMocHelpers::stringData(
     "EQ",
-    "on_verticalSlider_valueChanged",
+    "closeEvent",
     "",
-    "value"
+    "QCloseEvent*"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSEQENDCLASS_t {
     uint offsetsAndSizes[8];
     char stringdata0[3];
-    char stringdata1[31];
+    char stringdata1[11];
     char stringdata2[1];
-    char stringdata3[6];
+    char stringdata3[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSEQENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSEQENDCLASS_t qt_meta_stringdata_CLASSEQENDCLASS = {
     {
         QT_MOC_LITERAL(0, 2),  // "EQ"
-        QT_MOC_LITERAL(3, 30),  // "on_verticalSlider_valueChanged"
-        QT_MOC_LITERAL(34, 0),  // ""
-        QT_MOC_LITERAL(35, 5)   // "value"
+        QT_MOC_LITERAL(3, 10),  // "closeEvent"
+        QT_MOC_LITERAL(14, 0),  // ""
+        QT_MOC_LITERAL(15, 12)   // "QCloseEvent*"
     },
     "EQ",
-    "on_verticalSlider_valueChanged",
+    "closeEvent",
     "",
-    "value"
+    "QCloseEvent*"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -86,7 +86,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSEQENDCLASS[] = {
        1,    1,   20,    2, 0x08,    1 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, 0x80000000 | 3,    2,
 
        0        // eod
 };
@@ -100,9 +100,9 @@ Q_CONSTINIT const QMetaObject EQ::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSEQENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<EQ, std::true_type>,
-        // method 'on_verticalSlider_valueChanged'
+        // method 'closeEvent'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<QCloseEvent *, std::false_type>
     >,
     nullptr
 } };
@@ -113,7 +113,7 @@ void EQ::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_
         auto *_t = static_cast<EQ *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_verticalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 0: _t->closeEvent((*reinterpret_cast< std::add_pointer_t<QCloseEvent*>>(_a[1]))); break;
         default: ;
         }
     }

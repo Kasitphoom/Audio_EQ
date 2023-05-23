@@ -10,6 +10,7 @@
 #define UI_EQ_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
@@ -55,6 +56,7 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,6 +65,11 @@ public:
         if (EQ->objectName().isEmpty())
             EQ->setObjectName("EQ");
         EQ->resize(900, 500);
+        EQ->setMinimumSize(QSize(900, 500));
+        EQ->setMaximumSize(QSize(900, 500));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/Dis_pic.png"), QSize(), QIcon::Normal, QIcon::Off);
+        EQ->setWindowIcon(icon);
         EQ->setAutoFillBackground(false);
         EQ->setStyleSheet(QString::fromUtf8("background-color: rgb(144,175,196);"));
         centralwidget = new QWidget(EQ);
@@ -290,52 +297,95 @@ public:
         pushButton_2 = new QPushButton(frame_2);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(40, 60, 93, 29));
-        pushButton_2->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
 "font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
 "text-align: left;\n"
 "color: #5F84A1;\n"
+"}\n"
+"QPushButton:hover {\n"
+"color: rgb(158, 170, 189)\n"
+"}\n"
 ""));
         pushButton_3 = new QPushButton(frame_2);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setGeometry(QRect(40, 90, 93, 29));
-        pushButton_3->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
 "font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
 "text-align: left;\n"
 "color: #5F84A1;\n"
+"}\n"
+"QPushButton:hover {\n"
+"color: rgb(158, 170, 189)\n"
+"}\n"
 ""));
         pushButton_4 = new QPushButton(frame_2);
         pushButton_4->setObjectName("pushButton_4");
         pushButton_4->setGeometry(QRect(40, 120, 93, 29));
-        pushButton_4->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
 "font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
 "text-align: left;\n"
 "color: #5F84A1;\n"
+"}\n"
+"QPushButton:hover {\n"
+"color: rgb(158, 170, 189)\n"
+"}\n"
 ""));
         pushButton_5 = new QPushButton(frame_2);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setGeometry(QRect(40, 150, 93, 29));
-        pushButton_5->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
 "font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
 "text-align: left;\n"
 "color: #5F84A1;\n"
+"}\n"
+"QPushButton:hover {\n"
+"color: rgb(158, 170, 189)\n"
+"}\n"
 ""));
         pushButton_6 = new QPushButton(frame_2);
         pushButton_6->setObjectName("pushButton_6");
         pushButton_6->setGeometry(QRect(40, 180, 93, 29));
-        pushButton_6->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
 "font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
 "text-align: left;\n"
 "color: #5F84A1;\n"
+"}\n"
+"QPushButton:hover {\n"
+"color: rgb(158, 170, 189)\n"
+"}\n"
+""));
+        pushButton_7 = new QPushButton(centralwidget);
+        pushButton_7->setObjectName("pushButton_7");
+        pushButton_7->setGeometry(QRect(750, 430, 93, 29));
+        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 41px;\n"
+"letter-spacing: -1px;\n"
+"background-color: rgb(26, 69, 104);\n"
+"color: #FFFFFF;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color: #808080;\n"
+"background-color: rgb(255, 255, 255);\n"
+"}\n"
 ""));
         EQ->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EQ);
@@ -353,7 +403,7 @@ public:
 
     void retranslateUi(QMainWindow *EQ)
     {
-        EQ->setWindowTitle(QCoreApplication::translate("EQ", "MainWindow", nullptr));
+        EQ->setWindowTitle(QCoreApplication::translate("EQ", "Equalizer", nullptr));
 #if QT_CONFIG(tooltip)
         verticalSlider_3->setToolTip(QCoreApplication::translate("EQ", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -420,6 +470,7 @@ public:
         pushButton_4->setText(QCoreApplication::translate("EQ", "CLASSIC", nullptr));
         pushButton_5->setText(QCoreApplication::translate("EQ", "JAZZ", nullptr));
         pushButton_6->setText(QCoreApplication::translate("EQ", "ROCK", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("EQ", "APPLY", nullptr));
     } // retranslateUi
 
 };
