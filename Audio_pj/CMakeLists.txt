@@ -20,8 +20,7 @@ set(PROJECT_SOURCES
         eq.cpp
         eq.h
         eq.ui
-        resource.qrc
-
+        resources.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

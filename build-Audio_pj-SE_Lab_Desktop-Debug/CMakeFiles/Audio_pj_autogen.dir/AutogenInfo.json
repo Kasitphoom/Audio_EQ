@@ -235,7 +235,7 @@
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
 		"C:/msys64/ucrt64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake",
-		"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/resource.qrc"
+		"C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj",
 	"DEP_FILE" : "C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug/Audio_pj_autogen/deps",

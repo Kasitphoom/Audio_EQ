@@ -16,6 +16,6 @@ EQ::~EQ()
 
 void EQ::on_verticalSlider_valueChanged(int value)
 {
-    ui->lineEdit->textEdited("value");
+
 }
 

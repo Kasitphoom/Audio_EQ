@@ -75,10 +75,10 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>151</width>
-      <height>81</height>
+      <x>10</x>
+      <y>10</y>
+      <width>191</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="font">
@@ -116,19 +116,19 @@ YOUR FEEL'N</string>
       <height>221</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
+	background-image: url(:/button-icon-sliders.png);
     background-repeat: no-repeat;
     background-position: center;
- 	boarder: none;
+	border: none;
 }</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>button-icon-sliders.png</normaloff>button-icon-sliders.png</iconset>
     </property>
     <property name="iconSize">
      <size>
