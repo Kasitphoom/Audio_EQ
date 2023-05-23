@@ -15,9 +15,6 @@ public:
     EQ(QWidget *parent = nullptr);
     ~EQ();
 
-private slots:
-    void on_verticalSlider_valueChanged(int value);
-
 private:
     Ui::EQ *ui;
 };

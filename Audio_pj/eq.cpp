@@ -1,21 +1,24 @@
-#include "eq.h"
-#include "./ui_eq.h"
+#ifndef EQ_H
+#define EQ_H
 
-EQ::EQ(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::EQ)
+#include <QMainWindow>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class EQ; }
+QT_END_NAMESPACE
+
+class EQ : public QMainWindow
 {
-    ui->setupUi(this);
-}
+    Q_OBJECT
 
-EQ::~EQ()
-{
-    delete ui;
-}
+public:
+    EQ(QWidget *parent = nullptr);
+    ~EQ();
 
+private slots:
+    void closeEvent(QCloseEvent*);
 
-void EQ::on_verticalSlider_valueChanged(int value)
-{
-
-}
-
+private:
+    Ui::EQ *ui;
+};
+#endif // EQ_H
