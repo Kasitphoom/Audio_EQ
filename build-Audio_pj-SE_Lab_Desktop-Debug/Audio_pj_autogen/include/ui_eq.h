@@ -14,8 +14,10 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QProgressBar>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,7 +27,9 @@ class Ui_EQ
 public:
     QWidget *centralwidget;
     QFrame *frame;
-    QPushButton *pushButton;
+    QSlider *verticalSlider;
+    QTextEdit *textEdit;
+    QProgressBar *progressBar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -33,23 +37,33 @@ public:
     {
         if (EQ->objectName().isEmpty())
             EQ->setObjectName("EQ");
-        EQ->resize(600, 509);
-        EQ->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 4);"));
+        EQ->resize(900, 500);
+        EQ->setAutoFillBackground(false);
+        EQ->setStyleSheet(QString::fromUtf8("background-color: rgb(144,175,196);"));
         centralwidget = new QWidget(EQ);
         centralwidget->setObjectName("centralwidget");
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(170, 60, 231, 301));
+        frame->setGeometry(QRect(210, 80, 650, 300));
         frame->setAutoFillBackground(false);
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(260, 390, 93, 29));
+        verticalSlider = new QSlider(frame);
+        verticalSlider->setObjectName("verticalSlider");
+        verticalSlider->setGeometry(QRect(610, 10, 21, 251));
+        verticalSlider->setMaximum(100);
+        verticalSlider->setOrientation(Qt::Vertical);
+        textEdit = new QTextEdit(frame);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(340, 170, 104, 75));
+        progressBar = new QProgressBar(frame);
+        progressBar->setObjectName("progressBar");
+        progressBar->setGeometry(QRect(140, 170, 118, 23));
+        progressBar->setValue(24);
         EQ->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EQ);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 600, 26));
+        menubar->setGeometry(QRect(0, 0, 900, 26));
         EQ->setMenuBar(menubar);
         statusbar = new QStatusBar(EQ);
         statusbar->setObjectName("statusbar");
@@ -63,7 +77,6 @@ public:
     void retranslateUi(QMainWindow *EQ)
     {
         EQ->setWindowTitle(QCoreApplication::translate("EQ", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("EQ", "PushButton", nullptr));
     } // retranslateUi
 
 };

@@ -13,3 +13,9 @@ EQ::~EQ()
     delete ui;
 }
 
+
+void EQ::on_verticalSlider_valueChanged(int value)
+{
+    ui->textEdit->currentCharFormatChanged(value);
+}
+
