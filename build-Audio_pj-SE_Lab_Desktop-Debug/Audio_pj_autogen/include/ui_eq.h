@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
@@ -30,6 +31,7 @@ public:
     QSlider *verticalSlider;
     QTextEdit *textEdit;
     QProgressBar *progressBar;
+    QLineEdit *lineEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,6 +62,9 @@ public:
         progressBar->setObjectName("progressBar");
         progressBar->setGeometry(QRect(140, 170, 118, 23));
         progressBar->setValue(24);
+        lineEdit = new QLineEdit(frame);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(10, 260, 113, 25));
         EQ->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EQ);
         menubar->setObjectName("menubar");
