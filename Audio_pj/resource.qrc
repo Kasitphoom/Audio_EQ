@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>button-icon-file-import.png</file>
+    <file>button-icon-shuffle.png</file>
+    <file>button-icon-sliders.png</file>
+    <file>button-icon-Vector.png</file>
+</qresource>
+</RCC>
