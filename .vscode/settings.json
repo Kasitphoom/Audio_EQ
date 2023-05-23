@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "D:/Audio_EQ"
+    "cmake.sourceDirectory": "D:/Audio_EQ",
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }

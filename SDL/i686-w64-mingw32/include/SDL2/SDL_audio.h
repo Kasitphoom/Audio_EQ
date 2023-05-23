@@ -185,7 +185,7 @@ typedef struct SDL_AudioSpec
     Uint8 silence;              /**< Audio buffer silence value (calculated) */
     Uint16 samples;             /**< Audio buffer size in sample FRAMES (total samples divided by channel count) */
     Uint16 padding;             /**< Necessary for some compile environments */
-    Uint32 size;                /**< Audio buffer size in bytes (calculated) */
+    Uint32 size;                /**< Audio buffer size in bytes (calcul ated) */
     SDL_AudioCallback callback; /**< Callback that feeds the audio device (NULL to use SDL_QueueAudio()). */
     void *userdata;             /**< Userdata passed to callback (ignored for NULL callbacks). */
 } SDL_AudioSpec;
