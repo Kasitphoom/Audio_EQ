@@ -77,13 +77,13 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>191</width>
-      <height>101</height>
+      <width>251</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Bahnschrift Condensed</family>
+      <family>Segoe UI</family>
       <pointsize>27</pointsize>
       <italic>false</italic>
       <bold>true</bold>
@@ -97,10 +97,12 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel{
-	background-color: transparent;
-	color: #1A4568
-}</string>
+     <string notr="true">letter-spacing: -2px;
+font-style: normal;
+font-weight: 2000;
+background-color: transparent;
+color: #1A4568	
+</string>
     </property>
     <property name="text">
      <string>DISCOVER 
@@ -110,10 +112,10 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>171</x>
-      <y>525</y>
-      <width>181</width>
-      <height>221</height>
+      <x>301</x>
+      <y>690</y>
+      <width>28</width>
+      <height>28</height>
      </rect>
     </property>
     <property name="cursor">
@@ -141,6 +143,244 @@ YOUR FEEL'N</string>
     </property>
     <property name="autoRepeat">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>690</y>
+      <width>28</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-icon-shuffle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>149</x>
+      <y>690</y>
+      <width>28</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-icon-file-import.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>73</x>
+      <y>690</y>
+      <width>28</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-icon-Vector.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>203</y>
+      <width>281</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/Dis_pic.png);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>111</x>
+      <y>562</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-backward-solid 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>187</x>
+      <y>562</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-play-solid 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>263</x>
+      <y>562</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-image: url(:/button-forward-solid 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>180</y>
+      <width>178</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	qproperty-alignment: 'AlignCenter';
+	background-color: transparent;
+	color: #B6D0E1
+}</string>
+    </property>
+    <property name="text">
+     <string>is playing right now</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>27</x>
+      <y>523</y>
+      <width>353</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

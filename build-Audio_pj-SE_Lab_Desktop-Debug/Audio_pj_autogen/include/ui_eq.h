@@ -27,7 +27,6 @@ class Ui_EQ
 public:
     QWidget *centralwidget;
     QFrame *frame;
-    QSlider *verticalSlider;
     QSlider *verticalSlider_3;
     QSlider *verticalSlider_4;
     QSlider *verticalSlider_5;
@@ -36,16 +35,26 @@ public:
     QSlider *verticalSlider_8;
     QSlider *verticalSlider_9;
     QSlider *verticalSlider_10;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_18;
     QLabel *label;
     QFrame *frame_2;
     QSlider *verticalSlider_2;
+    QLabel *label_7;
     QPushButton *pushButton_2;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLabel *label_6;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,17 +69,10 @@ public:
         centralwidget->setObjectName("centralwidget");
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(210, 80, 650, 300));
+        frame->setGeometry(QRect(230, 100, 591, 300));
         frame->setAutoFillBackground(false);
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        verticalSlider = new QSlider(frame);
-        verticalSlider->setObjectName("verticalSlider");
-        verticalSlider->setGeometry(QRect(610, 10, 21, 251));
-        verticalSlider->setStyleSheet(QString::fromUtf8(""));
-        verticalSlider->setMinimum(-16);
-        verticalSlider->setMaximum(16);
-        verticalSlider->setOrientation(Qt::Vertical);
         verticalSlider_3 = new QSlider(frame);
         verticalSlider_3->setObjectName("verticalSlider_3");
         verticalSlider_3->setGeometry(QRect(550, 10, 21, 251));
@@ -127,13 +129,134 @@ public:
         verticalSlider_10->setMinimum(-16);
         verticalSlider_10->setMaximum(16);
         verticalSlider_10->setOrientation(Qt::Vertical);
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(30, 20, 381, 51));
+        label_8 = new QLabel(frame);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(40, 260, 51, 31));
         QFont font;
         font.setFamilies({QString::fromUtf8("Segoe UI")});
         font.setBold(true);
         font.setItalic(false);
+        label_8->setFont(font);
+        label_8->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_9 = new QLabel(frame);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(110, 260, 51, 31));
+        label_9->setFont(font);
+        label_9->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_10 = new QLabel(frame);
+        label_10->setObjectName("label_10");
+        label_10->setGeometry(QRect(180, 260, 51, 31));
+        label_10->setFont(font);
+        label_10->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_11 = new QLabel(frame);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(250, 260, 51, 31));
+        label_11->setFont(font);
+        label_11->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_12 = new QLabel(frame);
+        label_12->setObjectName("label_12");
+        label_12->setGeometry(QRect(330, 260, 51, 31));
+        label_12->setFont(font);
+        label_12->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_13 = new QLabel(frame);
+        label_13->setObjectName("label_13");
+        label_13->setGeometry(QRect(400, 260, 51, 31));
+        label_13->setFont(font);
+        label_13->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_14 = new QLabel(frame);
+        label_14->setObjectName("label_14");
+        label_14->setGeometry(QRect(470, 260, 51, 31));
+        label_14->setFont(font);
+        label_14->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_15 = new QLabel(frame);
+        label_15->setObjectName("label_15");
+        label_15->setGeometry(QRect(540, 260, 51, 31));
+        label_15->setFont(font);
+        label_15->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_16 = new QLabel(frame);
+        label_16->setObjectName("label_16");
+        label_16->setGeometry(QRect(-10, 240, 51, 31));
+        label_16->setFont(font);
+        label_16->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_17 = new QLabel(frame);
+        label_17->setObjectName("label_17");
+        label_17->setGeometry(QRect(0, 0, 51, 31));
+        label_17->setFont(font);
+        label_17->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label_18 = new QLabel(frame);
+        label_18->setObjectName("label_18");
+        label_18->setGeometry(QRect(0, 120, 51, 31));
+        label_18->setFont(font);
+        label_18->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(30, 20, 381, 51));
         label->setFont(font);
         label->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
 "font-weight: 2000;\n"
@@ -144,7 +267,7 @@ public:
 "color: #1A4568;"));
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName("frame_2");
-        frame_2->setGeometry(QRect(30, 100, 151, 261));
+        frame_2->setGeometry(QRect(30, 120, 151, 261));
         frame_2->setAutoFillBackground(false);
         frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(26, 69, 104);border-radius: 25px;;"));
         frame_2->setFrameShape(QFrame::StyledPanel);
@@ -155,80 +278,64 @@ public:
         verticalSlider_2->setMinimum(-16);
         verticalSlider_2->setMaximum(16);
         verticalSlider_2->setOrientation(Qt::Vertical);
+        label_7 = new QLabel(frame_2);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(40, 10, 81, 31));
+        label_7->setFont(font);
+        label_7->setStyleSheet(QString::fromUtf8("font-weight: 2000;\n"
+"font-size: 20px;\n"
+"line-height: 24px;\n"
+"text-align: center;\n"
+"color: #FFFFFF;"));
         pushButton_2 = new QPushButton(frame_2);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(30, 10, 93, 29));
+        pushButton_2->setGeometry(QRect(40, 60, 93, 29));
         pushButton_2->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
 "font-weight: 2000;\n"
-"font-size: 20px;\n"
-"line-height: 24px;\n"
-"\n"
-"color: #FFFFFF;\n"
-""));
-        label_2 = new QLabel(frame_2);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(40, 60, 81, 31));
-        label_2->setFont(font);
-        label_2->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
-"font-weight: 2000;\n"
 "font-size: 16px;\n"
 "line-height: 24px;\n"
-"\n"
+"text-align: left;\n"
 "color: #5F84A1;\n"
 ""));
-        label_3 = new QLabel(frame_2);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(40, 90, 81, 31));
-        label_3->setFont(font);
-        label_3->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
-"font-weight: 2000;\n"
-"font-size: 16px;\n"
-"line-height: 24px;\n"
-"\n"
-"color: #5F84A1;\n"
-""));
-        label_4 = new QLabel(frame_2);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(40, 120, 81, 31));
-        label_4->setFont(font);
-        label_4->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
-"font-weight: 2000;\n"
-"font-size: 16px;\n"
-"line-height: 24px;\n"
-"\n"
-"color: #5F84A1;\n"
-""));
-        label_5 = new QLabel(frame_2);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(40, 150, 81, 31));
-        label_5->setFont(font);
-        label_5->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
-"font-weight: 2000;\n"
-"font-size: 16px;\n"
-"line-height: 24px;\n"
-"\n"
-"color: #5F84A1;\n"
-""));
-        label_6 = new QLabel(frame_2);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(40, 180, 81, 31));
-        label_6->setFont(font);
-        label_6->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
-"font-weight: 2000;\n"
-"font-size: 16px;\n"
-"line-height: 24px;\n"
-"\n"
-"color: #5F84A1;\n"
-""));
-        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3 = new QPushButton(frame_2);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(230, 380, 93, 29));
+        pushButton_3->setGeometry(QRect(40, 90, 93, 29));
         pushButton_3->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
 "font-weight: 2000;\n"
-"font-size: 20px;\n"
+"font-size: 16px;\n"
 "line-height: 24px;\n"
-"\n"
-"color: #FFFFFF;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        pushButton_4 = new QPushButton(frame_2);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(40, 120, 93, 29));
+        pushButton_4->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        pushButton_5 = new QPushButton(frame_2);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(40, 150, 93, 29));
+        pushButton_5->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
+""));
+        pushButton_6 = new QPushButton(frame_2);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setGeometry(QRect(40, 180, 93, 29));
+        pushButton_6->setStyleSheet(QString::fromUtf8("font-style: normal;\n"
+"font-weight: 2000;\n"
+"font-size: 16px;\n"
+"line-height: 24px;\n"
+"text-align: left;\n"
+"color: #5F84A1;\n"
 ""));
         EQ->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EQ);
@@ -247,12 +354,6 @@ public:
     void retranslateUi(QMainWindow *EQ)
     {
         EQ->setWindowTitle(QCoreApplication::translate("EQ", "MainWindow", nullptr));
-#if QT_CONFIG(tooltip)
-        verticalSlider->setToolTip(QCoreApplication::translate("EQ", "<html><head/><body><p><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(whatsthis)
-        verticalSlider->setWhatsThis(QCoreApplication::translate("EQ", "<html><head/><body><p><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(whatsthis)
 #if QT_CONFIG(tooltip)
         verticalSlider_3->setToolTip(QCoreApplication::translate("EQ", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -301,14 +402,24 @@ public:
 #if QT_CONFIG(whatsthis)
         verticalSlider_10->setWhatsThis(QCoreApplication::translate("EQ", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
+        label_8->setText(QCoreApplication::translate("EQ", "    100", nullptr));
+        label_9->setText(QCoreApplication::translate("EQ", "    200", nullptr));
+        label_10->setText(QCoreApplication::translate("EQ", "    400", nullptr));
+        label_11->setText(QCoreApplication::translate("EQ", "    800", nullptr));
+        label_12->setText(QCoreApplication::translate("EQ", "   1K", nullptr));
+        label_13->setText(QCoreApplication::translate("EQ", "   2K", nullptr));
+        label_14->setText(QCoreApplication::translate("EQ", "   8K", nullptr));
+        label_15->setText(QCoreApplication::translate("EQ", "  16K", nullptr));
+        label_16->setText(QCoreApplication::translate("EQ", "   -16dB", nullptr));
+        label_17->setText(QCoreApplication::translate("EQ", "+16dB", nullptr));
+        label_18->setText(QCoreApplication::translate("EQ", "    0dB", nullptr));
         label->setText(QCoreApplication::translate("EQ", "ENHANCE YOUR MOOD", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("EQ", "PRESET", nullptr));
-        label_2->setText(QCoreApplication::translate("EQ", "NORMAL", nullptr));
-        label_3->setText(QCoreApplication::translate("EQ", "POP", nullptr));
-        label_4->setText(QCoreApplication::translate("EQ", "CLASSIC", nullptr));
-        label_5->setText(QCoreApplication::translate("EQ", "JAZZ", nullptr));
-        label_6->setText(QCoreApplication::translate("EQ", "ROCK", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("EQ", "PRESET", nullptr));
+        label_7->setText(QCoreApplication::translate("EQ", "PRESET", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("EQ", "NORMAL", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("EQ", "POP", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("EQ", "CLASSIC", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("EQ", "JAZZ", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("EQ", "ROCK", nullptr));
     } // retranslateUi
 
 };

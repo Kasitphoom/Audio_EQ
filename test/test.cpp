@@ -1,11 +1,13 @@
 #include "SDL2/SDL.h"
 #include <iostream>
 #include <filesystem>
+#include <vector>
 
 namespace fs = std::filesystem;
 
 #define SDL_MAIN_HANDLED
 #define MUS_PATH "../10000hrs.wav"
+#define FILE_CACHE_PATH "audio_cache"
 
 void audio_callback(void *userdata, Uint8 *stream, int len);
 
@@ -34,8 +36,14 @@ static Uint32 audio_len; // remaining length of the sample we have to play
 
 int WinMain(int argc, char* argv[]) {
 
-    if(!fs::is_directory("audio_cache")) {
-        fs::create_directory("audio_cache");
+    if(!fs::is_directory(FILE_CACHE_PATH)) {
+        fs::create_directory(FILE_CACHE_PATH);
+    }
+
+    fs::path audioCachePath = fs::path(FILE_CACHE_PATH);
+    std::vector<fs::path> audioCacheFiles;
+    for(auto& p: fs::directory_iterator(audioCachePath)) {
+        audioCacheFiles.push_back(p.path());
     }
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
@@ -61,51 +69,56 @@ int WinMain(int argc, char* argv[]) {
 	static Uint8 *wav_buffer; // buffer containing our audio file
 	static SDL_AudioSpec wav_spec; // the specs of our piece of music
 
-    if( SDL_LoadWAV(MUS_PATH, &wav_spec, &wav_buffer, &wav_length) == NULL ){
-        std::cout << SDL_GetBasePath() << std::endl;
-        std::cout << "Couldn't load " << MUS_PATH << ": " << SDL_GetError() << std::endl;
-	    return 1;
-	}
-
-    int audioMinutes, audioSeconds;
-    double TotalSeconds;
-    calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
-    std::cout << "Real Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
-
-    wav_spec.callback = audio_callback;
-    wav_spec.userdata = NULL;
-
+    for(auto& p: audioCacheFiles) {
+        std::cout << p << std::endl;
     
+        if( SDL_LoadWAV(p.string().c_str(), &wav_spec, &wav_buffer, &wav_length) == NULL ){
+            std::cout << SDL_GetBasePath() << std::endl;
+            std::cout << "Couldn't load " << MUS_PATH << ": " << SDL_GetError() << std::endl;
+            return 1;
+        }
 
-    Uint32 startPos = starttime(90, TotalSeconds) * wav_spec.freq * wav_spec.channels * SDL_AUDIO_BITSIZE(wav_spec.format) / 8;
-    wav_buffer += startPos;
-    wav_length -= startPos;
+        int audioMinutes, audioSeconds;
+        double TotalSeconds;
+        calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
+        std::cout << "Real Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
 
-    audio_pos = wav_buffer; // copy sound buffer
-	audio_len = wav_length; // copy file length
-    // set our global static variables
-	audio_pos = wav_buffer; // copy sound buffer
-	audio_len = wav_length; // copy file length
+        wav_spec.callback = audio_callback;
+        wav_spec.userdata = NULL;
 
-    calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
-    std::cout << "Play Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
+        
 
-    if ( SDL_OpenAudio(&wav_spec, NULL) < 0 ){
-	    std::cout << "Couldn't open audio: " << SDL_GetError() << std::endl;
-	    exit(-1);
-	}
+        Uint32 startPos = starttime(0, TotalSeconds) * wav_spec.freq * wav_spec.channels * SDL_AUDIO_BITSIZE(wav_spec.format) / 8;
+        wav_buffer += startPos;
+        wav_length -= startPos;
 
-    SDL_PauseAudio(0);
+        audio_pos = wav_buffer; // copy sound buffer
+        audio_len = wav_length; // copy file length
+        // set our global static variables
+        audio_pos = wav_buffer; // copy sound buffer
+        audio_len = wav_length; // copy file length
 
-    while ( audio_len > 0 ) {
-		SDL_Delay(100); 
-	}
+        calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
+        std::cout << "Play Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
 
+        if ( SDL_OpenAudio(&wav_spec, NULL) < 0 ){
+            std::cout << "Couldn't open audio: " << SDL_GetError() << std::endl;
+            exit(-1);
+        }
+
+        SDL_PauseAudio(0);
+
+        while ( audio_len > 0 ) {
+            SDL_Delay(100); 
+        }
+
+        SDL_CloseAudio();
+	    SDL_FreeWAV(wav_buffer);
+    }
     std::cout << "Finished playing audio" << std::endl;
 
     // shut everything down
-	SDL_CloseAudio();
-	SDL_FreeWAV(wav_buffer);
+	
 
     return 0;
 }
