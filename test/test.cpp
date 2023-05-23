@@ -1,5 +1,8 @@
 #include "SDL2/SDL.h"
 #include <iostream>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 #define SDL_MAIN_HANDLED
 #define MUS_PATH "../10000hrs.wav"
@@ -30,6 +33,11 @@ static Uint8 *audio_pos; // global pointer to the audio buffer to be played
 static Uint32 audio_len; // remaining length of the sample we have to play
 
 int WinMain(int argc, char* argv[]) {
+
+    if(!fs::is_directory("audio_cache")) {
+        fs::create_directory("audio_cache");
+    }
+
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         std::cout << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
         return 1;

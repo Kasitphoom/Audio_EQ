@@ -32,4 +32,4 @@ target_link_libraries(AudioEQ PRIVATE
 )
 
 # Set the C++ standard to C++11 or higher if needed
-set_target_properties(AudioEQ PROPERTIES CXX_STANDARD 11)
+set_target_properties(AudioEQ PROPERTIES CXX_STANDARD 17)
