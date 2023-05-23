@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked())); // push play button to change the [Music Name]
 }
 
 MainWindow::~MainWindow()
@@ -17,6 +18,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::myclicked(){
+    ui->label_4->setText(test);
+}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -28,4 +32,8 @@ void MainWindow::on_pushButton_clicked()
         eq->show();
         EQ_open = true;
     }
+}
+void EQ::closeEvent(QCloseEvent *event)
+{
+    EQ_open = false;
 }

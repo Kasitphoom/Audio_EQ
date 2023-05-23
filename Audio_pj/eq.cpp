@@ -1,24 +1,14 @@
-#ifndef EQ_H
-#define EQ_H
+#include "eq.h"
+#include "./ui_eq.h"
 
-#include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class EQ; }
-QT_END_NAMESPACE
-
-class EQ : public QMainWindow
+EQ::EQ(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::EQ)
 {
-    Q_OBJECT
+    ui->setupUi(this);
+}
 
-public:
-    EQ(QWidget *parent = nullptr);
-    ~EQ();
-
-private slots:
-    void closeEvent(QCloseEvent*);
-
-private:
-    Ui::EQ *ui;
-};
-#endif // EQ_H
+EQ::~EQ()
+{
+    delete ui;
+}

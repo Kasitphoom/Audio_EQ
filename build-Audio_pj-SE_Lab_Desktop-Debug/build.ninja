@@ -220,7 +220,7 @@ build Audio_pj_autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir}Audi
 #############################################
 # Phony custom command for CMakeFiles\Audio_pj_autogen_timestamp_deps
 
-build CMakeFiles/Audio_pj_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Audio_pj_autogen_timestamp_deps: phony C$:/msys64/ucrt64/lib/libQt6Core.dll.a C$:/msys64/ucrt64/share/qt6/bin/moc.exe C$:/msys64/ucrt64/share/qt6/bin/uic.exe C$:/msys64/ucrt64/lib/libQt6Widgets.dll.a
+build CMakeFiles/Audio_pj_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Audio_pj_autogen_timestamp_deps: phony C$:/msys64/ucrt64/lib/libQt6Core.dll.a C$:/msys64/ucrt64/share/qt6/bin/uic.exe C$:/msys64/ucrt64/share/qt6/bin/moc.exe C$:/msys64/ucrt64/lib/libQt6Widgets.dll.a
 
 
 #############################################

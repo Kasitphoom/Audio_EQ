@@ -15,6 +15,9 @@ public:
     EQ(QWidget *parent = nullptr);
     ~EQ();
 
+private slots:
+    void closeEvent(QCloseEvent*);
+
 private:
     Ui::EQ *ui;
 };
