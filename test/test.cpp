@@ -6,6 +6,25 @@
 
 void audio_callback(void *userdata, Uint8 *stream, int len);
 
+void calculateAudioLength(const SDL_AudioSpec& audioSpec, Uint32 audioLength, int& minutes, int& seconds, double& totalSeconds) {
+    
+    int bitPerSample = SDL_AUDIO_BITSIZE(audioSpec.format);
+    
+    totalSeconds = static_cast<double>(audioLength) / (static_cast<int>(audioSpec.channels) * bitPerSample / 8 * audioSpec.freq);
+
+    // Calculate the minutes and seconds
+    minutes = static_cast<int>(totalSeconds) / 60;
+    seconds = static_cast<int>(totalSeconds) % 60;
+}
+
+double map(double value, double min1, double max1, double min2, double max2) {
+    return min2 + (max2 - min2) * ((value - min1) / (max1 - min1));
+}
+
+double starttime(double input, double totalSeconds) {
+    return map(input, 0, 100, 0, totalSeconds);
+}
+
 // variable declarations
 static Uint8 *audio_pos; // global pointer to the audio buffer to be played
 static Uint32 audio_len; // remaining length of the sample we have to play
@@ -40,14 +59,28 @@ int WinMain(int argc, char* argv[]) {
 	    return 1;
 	}
 
+    int audioMinutes, audioSeconds;
+    double TotalSeconds;
+    calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
+    std::cout << "Real Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
+
     wav_spec.callback = audio_callback;
     wav_spec.userdata = NULL;
+
+    
+
+    Uint32 startPos = starttime(90, TotalSeconds) * wav_spec.freq * wav_spec.channels * SDL_AUDIO_BITSIZE(wav_spec.format) / 8;
+    wav_buffer += startPos;
+    wav_length -= startPos;
 
     audio_pos = wav_buffer; // copy sound buffer
 	audio_len = wav_length; // copy file length
     // set our global static variables
 	audio_pos = wav_buffer; // copy sound buffer
 	audio_len = wav_length; // copy file length
+
+    calculateAudioLength(wav_spec, wav_length, audioMinutes, audioSeconds, TotalSeconds);
+    std::cout << "Play Audio Length: " << audioMinutes << " minutes " << audioSeconds << " seconds" << std::endl;
 
     if ( SDL_OpenAudio(&wav_spec, NULL) < 0 ){
 	    std::cout << "Couldn't open audio: " << SDL_GetError() << std::endl;
@@ -59,6 +92,8 @@ int WinMain(int argc, char* argv[]) {
     while ( audio_len > 0 ) {
 		SDL_Delay(100); 
 	}
+
+    std::cout << "Finished playing audio" << std::endl;
 
     // shut everything down
 	SDL_CloseAudio();
