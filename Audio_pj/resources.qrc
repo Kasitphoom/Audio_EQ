@@ -4,5 +4,10 @@
         <file>button-icon-Vector.png</file>
         <file>button-icon-sliders.png</file>
         <file>button-icon-shuffle.png</file>
+        <file>button-backward-solid 1.png</file>
+        <file>button-forward-solid 1.png</file>
+        <file>button-play-solid 1.png</file>
+        <file>button-pause.png</file>
+        <file>Dis_pic.png</file>
     </qresource>
 </RCC>
