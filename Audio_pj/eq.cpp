@@ -13,3 +13,9 @@ EQ::~EQ()
     delete ui;
 }
 
+
+void EQ::on_pushButton_clicked()
+{
+
+}
+
