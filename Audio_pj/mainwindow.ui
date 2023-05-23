@@ -113,19 +113,19 @@ YOUR FEEL'N</string>
       <height>28</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
+	background-image: url(:/button-icon-sliders.png);
     background-repeat: no-repeat;
     background-position: center;
- 	boarder: none;
+	border: none;
 }</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>button-icon-sliders.png</normaloff>button-icon-sliders.png</iconset>
     </property>
     <property name="iconSize">
      <size>
