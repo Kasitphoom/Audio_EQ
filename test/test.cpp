@@ -1,13 +1,15 @@
 #include "SDL2/SDL.h"
+#include "SDL2/SDL_mixer.h"
+#include "AudioFile.hpp"
+#include "AudioFile.cpp"
 #include <iostream>
 #include <filesystem>
 #include <vector>
+#include <thread>
 
 namespace fs = std::filesystem;
 
 #define SDL_MAIN_HANDLED
-#define MUS_PATH "../10000hrs.wav"
-#define FILE_CACHE_PATH "audio_cache"
 
 void audio_callback(void *userdata, Uint8 *stream, int len);
 
@@ -40,11 +42,7 @@ int WinMain(int argc, char* argv[]) {
         fs::create_directory(FILE_CACHE_PATH);
     }
 
-    fs::path audioCachePath = fs::path(FILE_CACHE_PATH);
-    std::vector<fs::path> audioCacheFiles;
-    for(auto& p: fs::directory_iterator(audioCachePath)) {
-        audioCacheFiles.push_back(p.path());
-    }
+    AudioFileCache audioCache;
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         std::cout << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
@@ -69,12 +67,12 @@ int WinMain(int argc, char* argv[]) {
 	static Uint8 *wav_buffer; // buffer containing our audio file
 	static SDL_AudioSpec wav_spec; // the specs of our piece of music
 
-    for(auto& p: audioCacheFiles) {
+    for(auto& p: audioCache.getFilesFullPath()) {
         std::cout << p << std::endl;
     
-        if( SDL_LoadWAV(p.string().c_str(), &wav_spec, &wav_buffer, &wav_length) == NULL ){
+        if( SDL_LoadWAV(p, &wav_spec, &wav_buffer, &wav_length) == NULL ){
             std::cout << SDL_GetBasePath() << std::endl;
-            std::cout << "Couldn't load " << MUS_PATH << ": " << SDL_GetError() << std::endl;
+            std::cout << "Couldn't load " << p << ": " << SDL_GetError() << std::endl;
             return 1;
         }
 
