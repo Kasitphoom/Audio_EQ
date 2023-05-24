@@ -4,46 +4,27 @@
 #include "SDL2/SDL_mixer.h"
 #include "AudioFile.hpp"
 #include "AudioFile.cpp"
+#include "Music.hpp"
+#include "Music.cpp"
 #include <iostream>
 
+
+double map(double value, double min1, double max1, double min2, double max2) {
+    return min2 + (max2 - min2) * ((value - min1) / (max1 - min1));
+}
+
 int main(int arc, char* argv[]) {
-    AudioFileCache audioCache;
+    AudioFile* audioCache;
+    audioCache = new AudioFileCache();
+
+    Music* music;
+    music = new Music(audioCache->getFilesFullPath());
     
-    if (SDL_Init(SDL_INIT_AUDIO) < 0){
-        std::cout << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
-    }
+    music->InitMusic();
 
-    // Initialize SDL_mixer
-    if (Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 4096) < 0) {
-        std::cout << "Failed to initialize SDL_mixer: " << Mix_GetError() << std::endl;
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_mixer initialization failed: %s", Mix_GetError());
-        return 1;
-    }
+    music->playMusic();
 
-    Mix_Chunk* music = Mix_LoadWAV("audio_cache/10000hrs.wav");
-    if (music == NULL) {
-        std::cout << "Failed to load music: " << Mix_GetError() << std::endl;
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to load music: %s", Mix_GetError());
-        return 1;
-    }
-
-    int channel;
-
-    channel = Mix_PlayChannel(-1, music, 0);
-    if(channel == -1){
-        std::cout << "Failed to play music: " << Mix_GetError() << std::endl;
-    }
-
-    while (Mix_Playing(channel) != 0) {
-        std::cout << "Playing music" << std::endl;
-        SDL_Delay(100);
-    }
-
-    Mix_FreeChunk(music);
-    Mix_CloseAudio();
-    SDL_Quit();
-    Mix_Quit();
+    music->QuitMusic();
 
     return 0;
 }
