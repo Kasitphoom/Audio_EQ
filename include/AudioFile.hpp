@@ -19,6 +19,7 @@ class AudioFile{
         std::vector<char*> getFileNames() const;
         std::vector<char*> getFilesFullPath() const;
         virtual std::string getFilePath() const;
+        static void InitCacheDir();
 };
 
 class AudioFileCache: public AudioFile{

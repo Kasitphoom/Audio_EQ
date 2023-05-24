@@ -4,6 +4,7 @@
 std::vector<fs::path> AudioFile::filesData;
 
 void AudioFile::FileInit() {
+    AudioFile::InitCacheDir();
     fs::path audioPath = fs::path(FILE_CACHE_PATH);
     std::vector<fs::path> audioFiles;
     for(auto& p: fs::directory_iterator(audioPath)) {
@@ -43,6 +44,13 @@ std::vector<char*> AudioFile::getFilesFullPath() const {
 
 std::string AudioFile::getFilePath() const{
     return "";
+}
+
+void AudioFile::InitCacheDir(){
+    fs::path audioPath = fs::path(FILE_CACHE_PATH);
+    if(!fs::exists(audioPath)){
+        fs::create_directory(audioPath);
+    }
 }
 
 // AudioFileCache
