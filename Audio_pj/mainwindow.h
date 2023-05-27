@@ -8,6 +8,8 @@
 
 static bool en = true;
 static bool th = false;
+static EQ* eq;
+static int setting = 0;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,9 +30,12 @@ private slots:
 //    void myclicked(MUS::Music& m);
 
     void on_pushButton_8_clicked();
+    void showMain();
+    void showSetting();
 
 private:
     Ui::MainWindow *ui;
     EQ *eq;
 };
+
 #endif // MAINWINDOW_H

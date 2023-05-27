@@ -6,7 +6,7 @@
 #include <iostream>
 #include "eq.h"
 
-static bool EQ_open = false;
+static bool setting_open = false;
 static bool playlist_click = false;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,16 +20,11 @@ MainWindow::MainWindow(QWidget *parent)
 //    music.InitMusic();
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
-    ui->frame_4->hide();
-    ui->label_5->hide();
-    ui->label_6->hide();
-
     for (int i = 0; i < 20; i++){
         ui->listWidget->addItem("Hello world");
     }
-    ui->listWidget->hide();
-
-
+    
+    showMain();
 }
 
 MainWindow::~MainWindow()
@@ -44,17 +39,81 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if (!EQ_open){
-        eq = new EQ(this);
-        eq->show();
-        EQ_open = true;
 
+    if (!setting_open){
+        showSetting();
+        setting_open = true;
+    } else {
+        showMain();
+        setting_open = false;
     }
+
 }
 
-void EQ::closeEvent(QCloseEvent *event)
+void MainWindow::showMain() {
+    //hide setting
+    ui->frame_8->hide();
+    ui->label_13->hide();
+    //show main
+    ui->frame_9->show();
+    ui->label->show();
+    ui->label_2->show();
+    ui->label_3->show();
+    ui->label_4->show();
+    ui->frame->show();
+    //hide playlist
+    ui->frame_4->hide();
+    ui->label_5->hide();
+    ui->label_6->hide();
+    ui->listWidget->hide();
+}
+
+void MainWindow::showSetting() {
+    //show setting
+    ui->frame_8->show();
+    ui->label_13->show();
+    //hide main
+    ui->frame_9->hide();
+    ui->label->hide();
+    ui->label_2->hide();
+    ui->label_3->hide();
+    ui->label_4->hide();
+    ui->frame->hide();
+    //hide playlist
+    ui->frame_4->hide();
+    ui->label_5->hide();
+    ui->label_6->hide();
+    ui->listWidget->hide();
+}
+void MainWindow::on_pushButton_8_clicked()
 {
-    EQ_open = false;
+    if (!playlist_click) {
+        ui->frame_4->show();
+        ui->label_5->show();
+        ui->label_6->show();
+        ui->listWidget->show();
+
+        ui->label->hide();
+        ui->label_2->hide();
+        ui->frame->hide();
+        ui->label_3->hide();
+        ui->label_4->hide();
+        playlist_click = true;
+    } else {
+        ui->frame_4->hide();
+        ui->label_5->hide();
+        ui->label_6->hide();
+        ui->listWidget->hide();
+
+        ui->label->show();
+        ui->label_2->show();
+        ui->frame->show();
+        ui->label_3->show();
+        ui->label_4->show();
+        playlist_click = false;
+        
+    }
+
 }
 
 //std::vector<fs::path> AF::AudioFile::filesData;
@@ -228,32 +287,5 @@ void EQ::closeEvent(QCloseEvent *event)
 //    });
 //}
 
-void MainWindow::on_pushButton_8_clicked()
-{
-    if (!playlist_click) {
-        ui->frame_4->show();
-        ui->label_5->show();
-        ui->label_6->show();
-        ui->listWidget->show();
-
-        ui->frame->hide();
-        ui->label_3->hide();
-        ui->label_4->hide();
-        ui->label_2->hide();
-        playlist_click = true;
-    } else {
-        ui->frame_4->hide();
-        ui->label_5->hide();
-        ui->label_6->hide();
-        ui->listWidget->hide();
-
-        ui->frame->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_2->show();
-        playlist_click = false;
-    }
-
-}
 
 

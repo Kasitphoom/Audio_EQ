@@ -46,7 +46,6 @@ void EQ::on_pushButton_2_clicked()
         ui->pushButton_7->setText("APPLY");
 
     }
-
 }
 
 
