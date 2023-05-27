@@ -10,12 +10,17 @@
 class Music {
     private:
         Mix_Chunk* music;
+
         std::vector<char*> all_path;
+
         char* current_path;
+
         std::string name;
+
         int minute;
         int second;
         int music_index;
+
         double totalSecond;
 
         void setPath(std::string path);
@@ -25,10 +30,11 @@ class Music {
     public:
         Music(std::vector<char*> path) : all_path(path), minute(0), second(0), totalSecond(0.0), music_index(0){}
         Music(){};
-        ~Music();
+        ~Music(){};
 
         void InitMusic();
         void playMusic();
+        void playMusic(std::thread& thread);
         void pauseMusic();
         void resumeMusic();
         void stopMusic();

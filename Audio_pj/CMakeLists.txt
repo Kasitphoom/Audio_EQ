@@ -23,6 +23,12 @@ set(PROJECT_SOURCES
         resources.qrc
 )
 
+file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2_mixer.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+
+link_directories(${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Audio_pj
         MANUAL_FINALIZATION
@@ -46,7 +52,19 @@ else()
     endif()
 endif()
 
+target_include_directories(Audio_pj PRIVATE ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
+include_directories(${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
+include_directories(${CMAKE_SOURCE_DIR}/../include)
+
 target_link_libraries(Audio_pj PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+target_link_libraries(Audio_pj PRIVATE
+    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a
+    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2.a
+    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2main.a
+    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
+    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.a
+)
 
 set_target_properties(Audio_pj PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -54,6 +72,7 @@ set_target_properties(Audio_pj PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
+    CXX_STANDARD 17
 )
 
 install(TARGETS Audio_pj
