@@ -23,6 +23,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->frame_4->hide();
     ui->label_5->hide();
     ui->label_6->hide();
+
+    for (int i = 0; i < 20; i++){
+        ui->listWidget->addItem("Hello world");
+    }
+    ui->listWidget->hide();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -44,6 +51,7 @@ void MainWindow::on_pushButton_clicked()
 
     }
 }
+
 void EQ::closeEvent(QCloseEvent *event)
 {
     EQ_open = false;
@@ -226,21 +234,26 @@ void MainWindow::on_pushButton_8_clicked()
         ui->frame_4->show();
         ui->label_5->show();
         ui->label_6->show();
+        ui->listWidget->show();
 
         ui->frame->hide();
         ui->label_3->hide();
         ui->label_4->hide();
+        ui->label_2->hide();
         playlist_click = true;
     } else {
         ui->frame_4->hide();
         ui->label_5->hide();
         ui->label_6->hide();
+        ui->listWidget->hide();
 
         ui->frame->show();
         ui->label_3->show();
         ui->label_4->show();
+        ui->label_2->show();
         playlist_click = false;
     }
 
 }
+
 
