@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
 //    music.InitMusic();
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
+    // Connect a button's clicked signal to the populateListWidget() function
+//    connect(ui->listWidget, &QListWidget::itemClicked, this, &MainWindow::populateListWidget);
 
     ui->pushButton_14->setStyleSheet(clicked);
     ui->pushButton_28->setStyleSheet(clicked);
@@ -153,6 +155,21 @@ void MainWindow::on_pushButton_27_clicked() {
         ui->label_3->setText("กำลังเล่นอยู่ตอนนี้");
     }
 }
+
+//void MainWindow::populateListWidget()
+//{
+//    QString folderPath = "../album/playlist1"; // Replace with the actual folder path
+
+//    QDir directory(folderPath);
+//    QStringList fileList = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+
+//    ui->listWidget->clear();
+
+//    foreach (QString fileName, fileList)
+//    {
+//        ui->listWidget->addItem(fileName);
+//    }
+//}
 void MainWindow::on_pushButton_28_clicked()
 {
     if (!lightblue) {
