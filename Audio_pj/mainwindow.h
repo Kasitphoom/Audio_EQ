@@ -37,7 +37,7 @@ private slots:
     void on_pushButton_27_clicked();
     void on_pushButton_14_clicked();
     void Tokyo();
-    void Lightblue()
+    void Lightblue();
     void on_pushButton_29_clicked();
 
     void on_pushButton_28_clicked();
