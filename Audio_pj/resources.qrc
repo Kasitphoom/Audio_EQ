@@ -2,16 +2,27 @@
     <qresource prefix="/">
         <file>button-icon-file-import.png</file>
         <file>button-icon-Vector.png</file>
-        <file>button-icon-sliders.png</file>
         <file>button-icon-shuffle.png</file>
-        <file>button-backward-solid 1.png</file>
-        <file>button-forward-solid 1.png</file>
-        <file>button-play-solid 1.png</file>
+        <file>button-backward-solid.png</file>
+        <file>button-forward-solid.png</file>
+        <file>button-play-solid.png</file>
         <file>button-pause.png</file>
         <file>Dis_pic.png</file>
         <file>button-list.png</file>
-        <file>volume-high-solid 2.png</file>
+        <file>volume-high-solid.png</file>
         <file>voulume-off-solid.png</file>
-        <file>gear-solid 1.png</file>
+        <file>gear-solid.png</file>
+        <file>button-backward-solid2.png</file>
+        <file>button-forward-solid2.png</file>
+        <file>button-icon-file-import2.png</file>
+        <file>button-icon-shuffle2.png</file>
+        <file>button-icon-Vector2.png</file>
+        <file>button-list2.png</file>
+        <file>button-pause2.png</file>
+        <file>button-play-solid2.png</file>
+        <file>Dis_pic2.png</file>
+        <file>gear-solid2.png</file>
+        <file>volume-high-solid2.png</file>
+        <file>voulume-off-solid2.png</file>
     </qresource>
 </RCC>
