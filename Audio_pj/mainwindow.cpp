@@ -8,7 +8,7 @@
 
 static bool setting_open = false;
 static bool playlist_click = false;
-static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF";
+static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF}";
 static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
 
 
@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
 
     ui->pushButton_14->setStyleSheet(clicked);
+    ui->pushButton_28->setStyleSheet(clicked);
     //receive vector of song_names
     for (int i = 0; i < 20; i++){
         ui->listWidget->addItem("Hello world");
@@ -155,6 +156,8 @@ void MainWindow::on_pushButton_27_clicked() {
 void MainWindow::on_pushButton_28_clicked()
 {
     if (!lightblue) {
+        ui->pushButton_29->setStyleSheet(not_clicked);
+        ui->pushButton_28->setStyleSheet(clicked);
         Lightblue();
         lightblue = true;
         tokyo = false;
@@ -163,6 +166,8 @@ void MainWindow::on_pushButton_28_clicked()
 void MainWindow::on_pushButton_29_clicked()
 {
     if (!tokyo) {
+        ui->pushButton_28->setStyleSheet(not_clicked);
+        ui->pushButton_29->setStyleSheet(clicked);
         Tokyo();
         lightblue = false;
         tokyo = true;
