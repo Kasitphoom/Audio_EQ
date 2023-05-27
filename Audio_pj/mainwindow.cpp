@@ -155,6 +155,7 @@ void MainWindow::on_pushButton_27_clicked() {
 void MainWindow::on_pushButton_28_clicked()
 {
     if (!lightblue) {
+        Lightblue();
         lightblue = true;
         tokyo = false;
     }
@@ -162,6 +163,7 @@ void MainWindow::on_pushButton_28_clicked()
 void MainWindow::on_pushButton_29_clicked()
 {
     if (!tokyo) {
+        Tokyo();
         lightblue = false;
         tokyo = true;
     }
