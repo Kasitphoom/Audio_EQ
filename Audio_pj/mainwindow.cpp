@@ -3,6 +3,9 @@
 #include <QApplication>
 #include "eq.h"
 
+#include "AudioFile.hpp"
+#include "AudioFile.cpp"
+
 static bool EQ_open = false;
 
 MainWindow::MainWindow(QWidget *parent)
