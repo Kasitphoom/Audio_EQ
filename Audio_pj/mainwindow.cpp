@@ -5,10 +5,6 @@
 #include <QApplication>
 #include <iostream>
 #include "eq.h"
-#include "Music.h"
-#include "AudioFile.h"
-#include "../SDL/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h"
-#include "../SDL/x86_64-w64-mingw32/include/SDL2/SDL.h"
 
 static bool EQ_open = false;
 
