@@ -7,6 +7,7 @@
 #include "eq.h"
 
 static bool EQ_open = false;
+static bool playlist_click = false;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
 //    music.InitMusic();
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
+    ui->frame_4->hide();
+    ui->label_5->hide();
+    ui->label_6->hide();
 }
 
 MainWindow::~MainWindow()
@@ -37,6 +41,7 @@ void MainWindow::on_pushButton_clicked()
         eq = new EQ(this);
         eq->show();
         EQ_open = true;
+
     }
 }
 void EQ::closeEvent(QCloseEvent *event)
@@ -214,3 +219,28 @@ void EQ::closeEvent(QCloseEvent *event)
 //        playMusic();
 //    });
 //}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    if (!playlist_click) {
+        ui->frame_4->show();
+        ui->label_5->show();
+        ui->label_6->show();
+
+        ui->frame->hide();
+        ui->label_3->hide();
+        ui->label_4->hide();
+        playlist_click = true;
+    } else {
+        ui->frame_4->hide();
+        ui->label_5->hide();
+        ui->label_6->hide();
+
+        ui->frame->show();
+        ui->label_3->show();
+        ui->label_4->show();
+        playlist_click = false;
+    }
+
+}
+

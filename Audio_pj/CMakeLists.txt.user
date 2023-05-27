@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 10.0.0, 2023-05-27T20:39:29. -->
+<!-- Written by QtCreator 10.0.0, 2023-05-27T21:14:28. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{fc26d3fb-9288-4e60-a52b-eaea738c8fb9}</value>
-=======
-<!-- Written by QtCreator 9.0.1, 2023-05-27T18:17:24. -->
-<qtcreator>
- <data>
-  <variable>EnvironmentId</variable>
-  <value type="QByteArray">{b28ea984-82ce-4262-8799-2a060c9d8449}</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -83,11 +75,7 @@
     <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
-<<<<<<< HEAD
     <value type="int" key="ClangTools.ParallelJobs">6</value>
-=======
-    <value type="int" key="ClangTools.ParallelJobs">4</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
     <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
@@ -101,11 +89,7 @@
    <value type="QString" key="DeviceType">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">SE Lab Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">SE Lab Desktop</value>
-<<<<<<< HEAD
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{8a958c3f-458c-43e8-b5cd-c4f42bf947e4}</value>
-=======
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{7cc2f945-5c9f-43bf-95e5-b18a4f6b5148}</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
@@ -121,11 +105,7 @@
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Phong\kmitl\C++\Proj\Audio_EQ\build-Audio_pj-SE_Lab_Desktop-Debug</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\earth\OneDrive\coding_labtop\C++\Project\Audio_EQ\Audio_pj\..\build-Audio_pj-SE_Lab_Desktop-Debug</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -180,11 +160,7 @@
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Phong\kmitl\C++\Proj\Audio_EQ\build-Audio_pj-SE_Lab_Desktop-Release</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\earth\OneDrive\coding_labtop\C++\Project\Audio_EQ\Audio_pj\..\build-Audio_pj-SE_Lab_Desktop-Release</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -237,11 +213,7 @@
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Phong\kmitl\C++\Proj\Audio_EQ\build-Audio_pj-SE_Lab_Desktop-RelWithDebInfo</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\earth\OneDrive\coding_labtop\C++\Project\Audio_EQ\Audio_pj\..\build-Audio_pj-SE_Lab_Desktop-RelWithDebInfo</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -295,11 +267,7 @@
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}</value>
     <value type="int" key="EnableQmlDebugging">0</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Phong\kmitl\C++\Proj\Audio_EQ\build-Audio_pj-SE_Lab_Desktop-Profile</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\earth\OneDrive\coding_labtop\C++\Project\Audio_EQ\Audio_pj\..\build-Audio_pj-SE_Lab_Desktop-Profile</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -352,11 +320,7 @@
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Phong\kmitl\C++\Proj\Audio_EQ\build-Audio_pj-SE_Lab_Desktop-MinSizeRel</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\earth\OneDrive\coding_labtop\C++\Project\Audio_EQ\Audio_pj\..\build-Audio_pj-SE_Lab_Desktop-MinSizeRel</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -426,11 +390,7 @@
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-<<<<<<< HEAD
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Phong/kmitl/C++/Proj/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug</value>
-=======
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/earth/OneDrive/coding_labtop/C++/Project/Audio_EQ/build-Audio_pj-SE_Lab_Desktop-Debug</value>
->>>>>>> 034bfc3d77859047b01a0c55adcd8b7ab6f17f66
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

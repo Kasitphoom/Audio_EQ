@@ -7,9 +7,6 @@ static QString clicked_th = "QPushButton {font-style: normal;font-weight: 2000;f
 static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
 
 
-static bool eng = true;
-static bool th = false;
-
 EQ::EQ(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::EQ)
@@ -28,10 +25,10 @@ EQ::~EQ()
 void EQ::on_pushButton_2_clicked()
 {
 
-    if (!eng){
+    if (!en){
         ui->pushButton_2->setStyleSheet(clicked);
         ui->pushButton_3->setStyleSheet(not_clicked);
-        eng = true;
+        en = true;
         th = false;
         ui->label->setText("SETTINGS");
         ui->label_7->setText("Language");
@@ -56,9 +53,10 @@ void EQ::on_pushButton_2_clicked()
 void EQ::on_pushButton_3_clicked()
 {
     if (!th){
+        //EQ::hide();
         ui->pushButton_2->setStyleSheet(not_clicked);
         ui->pushButton_3->setStyleSheet(clicked_th);
-        eng = false;
+        en = false;
         th = true;
         ui->label->setText("การตั้งค่า");
         ui->label_7->setText("ภาษา");
@@ -76,4 +74,5 @@ void EQ::on_pushButton_3_clicked()
         ui->pushButton_7->setText("ตกลง");
     }
 }
+
 

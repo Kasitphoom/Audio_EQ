@@ -6,6 +6,9 @@
 #include "eq.h"
 #include "Music.h"
 
+static bool en = true;
+static bool th = false;
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -23,6 +26,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 //    void myclicked(MUS::Music& m);
+
+    void on_pushButton_8_clicked();
 
 private:
     Ui::MainWindow *ui;
