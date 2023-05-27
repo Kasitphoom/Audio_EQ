@@ -167,7 +167,7 @@ color: rgb(158, 170, 189)
 </string>
      </property>
      <property name="text">
-      <string>ไทย</string>
+      <string>THAI</string>
      </property>
     </widget>
    </widget>
@@ -705,6 +705,36 @@ color: rgb(158, 170, 189)
       <string>S</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-style: normal;
+font-weight: 2000;
+font-size: 27px;
+line-height: 41px;
+letter-spacing: -1px;
+
+color: #1A4568;</string>
+    </property>
+    <property name="text">
+     <string>ทดสอบ</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
