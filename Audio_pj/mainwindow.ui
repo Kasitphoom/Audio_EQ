@@ -486,8 +486,8 @@ color: #1A4568;
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>600</y>
+      <x>300</x>
+      <y>529</y>
       <width>28</width>
       <height>28</height>
      </rect>
