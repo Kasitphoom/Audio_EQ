@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     QString test;
 
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();

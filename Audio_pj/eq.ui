@@ -136,6 +136,7 @@ color: #5F84A1;
 QPushButton:hover {
 color: rgb(158, 170, 189)
 }
+
 </string>
      </property>
      <property name="text">
@@ -166,7 +167,7 @@ color: rgb(158, 170, 189)
 </string>
      </property>
      <property name="text">
-      <string>THAI</string>
+      <string>ไทย</string>
      </property>
     </widget>
    </widget>
@@ -705,16 +706,6 @@ color: rgb(158, 170, 189)
      </property>
     </widget>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>900</width>
-     <height>25</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
