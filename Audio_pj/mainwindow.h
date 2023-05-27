@@ -16,16 +16,15 @@ class MainWindow : public QMainWindow
     QString test;
 
 public:
-    MainWindow(QWidget *parent = nullptr, std::thread thread = thread);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
-    void myclicked(MUS::Music& m, std::thread thread);
+//    void myclicked(MUS::Music& m);
 
 private:
     Ui::MainWindow *ui;
     EQ *eq;
-    std::thread thread;
 };
 #endif // MAINWINDOW_H
