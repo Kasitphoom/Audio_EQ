@@ -170,13 +170,13 @@ void MainWindow::on_pushButton_29_clicked()
 }
 
 void MainWindow::Lightblue() {
-    ui->frame_5->setStyleSheet("background-color:   7B007C   ;border-radius: 25px;;");
-    ui->frame_6->setStyleSheet("background-color:   7B007C   ;border-radius: 25px;;");
+    ui->frame_5->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
+    ui->frame_6->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
 }
 
 void MainWindow::Tokyo() {
-    ui->frame_5->setStyleSheet("background-color:   7B007C   ;border-radius: 25px;;");
-    ui->frame_6->setStyleSheet("background-color:   7B007C   ;border-radius: 25px;;");
+    ui->frame_5->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
+    ui->frame_6->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
 }
 
 
