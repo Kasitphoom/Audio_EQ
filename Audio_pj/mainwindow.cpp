@@ -66,6 +66,7 @@ void MainWindow::showMain() {
     ui->label_5->hide();
     ui->label_6->hide();
     ui->listWidget->hide();
+    ui->label_7->hide();
 }
 
 void MainWindow::showSetting() {
