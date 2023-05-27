@@ -9,5 +9,8 @@
         <file>button-play-solid 1.png</file>
         <file>button-pause.png</file>
         <file>Dis_pic.png</file>
+        <file>button-list.png</file>
+        <file>volume-high-solid 2.png</file>
+        <file>voulume-off-solid.png</file>
     </qresource>
 </RCC>

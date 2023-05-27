@@ -112,8 +112,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>301</x>
-      <y>690</y>
+      <x>298</x>
+      <y>600</y>
       <width>28</width>
       <height>28</height>
      </rect>
@@ -123,7 +123,7 @@ YOUR FEEL'N</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-image: url(:/button-icon-sliders.png);
+	background-image: url(:/button-list.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;
@@ -148,8 +148,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>225</x>
-      <y>690</y>
+      <x>222</x>
+      <y>600</y>
       <width>28</width>
       <height>28</height>
      </rect>
@@ -178,8 +178,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>149</x>
-      <y>690</y>
+      <x>146</x>
+      <y>600</y>
       <width>28</width>
       <height>28</height>
      </rect>
@@ -208,8 +208,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>73</x>
-      <y>690</y>
+      <x>70</x>
+      <y>600</y>
       <width>28</width>
       <height>28</height>
      </rect>
@@ -257,8 +257,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>111</x>
-      <y>562</y>
+      <x>110</x>
+      <y>690</y>
       <width>30</width>
       <height>30</height>
      </rect>
@@ -287,8 +287,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>187</x>
-      <y>562</y>
+      <x>186</x>
+      <y>690</y>
       <width>30</width>
       <height>30</height>
      </rect>
@@ -317,8 +317,8 @@ YOUR FEEL'N</string>
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>263</x>
-      <y>562</y>
+      <x>262</x>
+      <y>690</y>
       <width>30</width>
       <height>30</height>
      </rect>
@@ -373,8 +373,8 @@ YOUR FEEL'N</string>
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>27</x>
-      <y>523</y>
+      <x>26</x>
+      <y>661</y>
       <width>353</width>
       <height>22</height>
      </rect>
@@ -419,6 +419,68 @@ color: #1A4568;
     </property>
     <property name="text">
      <string>DISCOVER</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>740</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>735</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+	background-image: url(:/voulume-off-solid.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>735</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+	
+	background-image: url(:/volume-high-solid 2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	border: none;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
    </widget>
   </widget>
