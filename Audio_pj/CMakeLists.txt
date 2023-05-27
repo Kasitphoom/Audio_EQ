@@ -21,10 +21,8 @@ set(PROJECT_SOURCES
         eq.h
         eq.ui
         resources.qrc
-        ${CMAKE_SOURCE_DIR}/../include/AudioFile.cpp
         ${CMAKE_SOURCE_DIR}/../include/AudioFile.h
         ${CMAKE_SOURCE_DIR}/../include/Music.h
-        ${CMAKE_SOURCE_DIR}/../include/Music.cpp
 )
 
 file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
@@ -57,8 +55,8 @@ else()
 endif()
 
 target_include_directories(Audio_pj PRIVATE ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
-include_directories(${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
-include_directories(${CMAKE_SOURCE_DIR}/../include)
+target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
+target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/../include)
 
 target_link_libraries(Audio_pj PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
@@ -68,6 +66,7 @@ target_link_libraries(Audio_pj PRIVATE
     ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2main.a
     ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
     ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.a
+    ${CMAKE_SOURCE_DIR}/../include/Music.h
 )
 
 set_target_properties(Audio_pj PROPERTIES

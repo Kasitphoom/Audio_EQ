@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "eq.h"
+#include "Music.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +20,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void myclicked();
+    void myclicked(MUS::Music& m);
 
 private:
     Ui::MainWindow *ui;

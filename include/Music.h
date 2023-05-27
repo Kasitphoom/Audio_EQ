@@ -5,8 +5,12 @@
 #include <vector>
 #include <thread>
 #include "AudioFile.h"
-#include "SDL2/SDL_mixer.h"
+#include "../SDL/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h"
 
+//QT_BEGIN_NAMESPACE
+//namespace MUS {class Music;}
+//QT_END_NAMESPACE
+namespace MUS{
 class Music {
     private:
         Mix_Chunk* music;
@@ -29,7 +33,7 @@ class Music {
 
     public:
         Music(std::vector<char*> path) : all_path(path), minute(0), second(0), totalSecond(0.0), music_index(0){}
-        Music(){};
+        Music() = default;
         ~Music(){};
 
         void InitMusic();
@@ -44,5 +48,5 @@ class Music {
         void QuitMusic();
         void seek(double val);
 };
-
+};
 #endif // MUSIC_HPP

@@ -5,14 +5,13 @@
 #include <vector>
 #include <string>
 #include <cstring>
-#include <QMainWindow>
 
 namespace fs = std::filesystem;
 
-QT_BEGIN_NAMESPACE
-namespace AF {class AudioFile;}
-QT_END_NAMESPACE
-
+//QT_BEGIN_NAMESPACE
+//namespace AF {class AudioFile;}
+//QT_END_NAMESPACE
+namespace AF{
 class AudioFile{
     protected:
         static std::vector<fs::path> filesData;
@@ -44,5 +43,5 @@ class AudioFileCustom: public AudioFile{
         };
         virtual std::string getFilePath() const override;
 };
-
+};
 #endif
