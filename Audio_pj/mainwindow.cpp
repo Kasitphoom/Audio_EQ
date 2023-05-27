@@ -20,6 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
 //    music.InitMusic();
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
+    for (int i = 0; i < 20; i++){
+        ui->listWidget->addItem("Hello world");
+    }
+    
     showMain();
 }
 
@@ -61,6 +65,7 @@ void MainWindow::showMain() {
     ui->frame_4->hide();
     ui->label_5->hide();
     ui->label_6->hide();
+    ui->listWidget->hide();
 }
 
 void MainWindow::showSetting() {
@@ -78,6 +83,7 @@ void MainWindow::showSetting() {
     ui->frame_4->hide();
     ui->label_5->hide();
     ui->label_6->hide();
+    ui->listWidget->hide();
 }
 void MainWindow::on_pushButton_8_clicked()
 {
@@ -85,7 +91,10 @@ void MainWindow::on_pushButton_8_clicked()
         ui->frame_4->show();
         ui->label_5->show();
         ui->label_6->show();
+        ui->listWidget->show();
 
+        ui->label->hide();
+        ui->label_2->hide();
         ui->frame->hide();
         ui->label_3->hide();
         ui->label_4->hide();
@@ -94,11 +103,15 @@ void MainWindow::on_pushButton_8_clicked()
         ui->frame_4->hide();
         ui->label_5->hide();
         ui->label_6->hide();
+        ui->listWidget->hide();
 
+        ui->label->show();
+        ui->label_2->show();
         ui->frame->show();
         ui->label_3->show();
         ui->label_4->show();
         playlist_click = false;
+        
     }
 }
 
@@ -272,5 +285,6 @@ void MainWindow::on_pushButton_8_clicked()
 //        playMusic();
 //    });
 //}
+
 
 
