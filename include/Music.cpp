@@ -103,3 +103,9 @@ void Music::calculateAudioLength(Mix_Chunk* music, int& minutes, int& seconds, d
     minutes = static_cast<int>(totalSeconds) / 60;
     seconds = static_cast<int>(totalSeconds) % 60;
 }
+
+void Music::playMusic(std::thread& thread){
+    thread = std::thread([this](){
+        playMusic();
+    });
+}
