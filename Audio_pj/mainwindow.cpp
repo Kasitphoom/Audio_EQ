@@ -131,9 +131,8 @@ void MainWindow::on_pushButton_14_clicked()
         ui->label_13->setText("SETTINGS");
         ui->label_10->setText("Language");
         ui->label_11->setText("THEME");
-        ui->pushButton_28->setText("LIGHT");
-        ui->pushButton_29->setText("BLACK");
-        ui->pushButton_30->setText("CUSTOM");
+        ui->pushButton_28->setText("LIGHTBLUE");
+        ui->pushButton_29->setText("DARK");
         ui->label_2->setText("DISCOVER \nYOUR FEEL'N");
         ui->label_3->setText("is playing right now");
     }
@@ -148,9 +147,8 @@ void MainWindow::on_pushButton_27_clicked() {
         ui->label_13->setText("การตั้งค่า");
         ui->label_10->setText("ภาษา");
         ui->label_11->setText("ธีม");
-        ui->pushButton_28->setText("ขาว");
+        ui->pushButton_28->setText("ฟ้าอ่อน");
         ui->pushButton_29->setText("ดำ");
-        ui->pushButton_30->setText("ปรับเอง");
         ui->label_2->setText("ค้นพบ\nความรู้สึกของคุณ");
         ui->label_3->setText("กำลังเล่นอยู่ตอนนี้");
     }
