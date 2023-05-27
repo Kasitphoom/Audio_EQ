@@ -22,11 +22,10 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void myclicked(MUS::Music& m);
+//    void myclicked(MUS::Music& m);
 
 private:
     Ui::MainWindow *ui;
     EQ *eq;
-    std::thread thread;
 };
 #endif // MAINWINDOW_H

@@ -12,5 +12,6 @@
         <file>button-list.png</file>
         <file>volume-high-solid 2.png</file>
         <file>voulume-off-solid.png</file>
+        <file>gear-solid 1.png</file>
     </qresource>
 </RCC>
