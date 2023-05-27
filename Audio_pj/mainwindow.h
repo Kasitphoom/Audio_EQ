@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <thread>
 #include "eq.h"
 #include "Music.h"
 
@@ -15,15 +16,16 @@ class MainWindow : public QMainWindow
     QString test;
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, std::thread thread = thread);
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
-    void myclicked(MUS::Music& m);
+    void myclicked(MUS::Music& m, std::thread thread);
 
 private:
     Ui::MainWindow *ui;
     EQ *eq;
+    std::thread thread;
 };
 #endif // MAINWINDOW_H

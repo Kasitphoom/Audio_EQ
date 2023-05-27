@@ -12,7 +12,7 @@
 
 static bool EQ_open = false;
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent, std::thread thread)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -20,8 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
     af = new AF::AudioFileCache();
 
     MUS::Music music;
+    music.InitMusic();
     ui->setupUi(this);
-    connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
+    connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music, thread))); // push play button to change the [Music Name]
 }
 
 MainWindow::~MainWindow()
@@ -29,8 +30,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::myclicked(MUS::Music& m){
+void MainWindow::myclicked(MUS::Music& m, std::thread thread){
     ui->label_4->setText(test);
+    m.playMusic(thread);
 }
 
 void MainWindow::on_pushButton_clicked()
