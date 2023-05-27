@@ -1,9 +1,9 @@
-#include "Music.hpp"
+#include "Music.h"
 #include "SDL2/SDL_mixer.h"
 #include "SDL2/SDL.h"
 #include <iostream>
 
-void Music::InitMusic(){
+void Music::InitMusic(){    
     if (SDL_Init(SDL_INIT_AUDIO) < 0){
         std::cout << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
         return;

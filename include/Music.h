@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <thread>
-#include "AudioFile.hpp"
+#include "AudioFile.h"
 #include "SDL2/SDL_mixer.h"
 
 class Music {

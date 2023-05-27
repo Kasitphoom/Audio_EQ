@@ -5,8 +5,13 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include <QMainWindow>
 
 namespace fs = std::filesystem;
+
+QT_BEGIN_NAMESPACE
+namespace AF {class AudioFile;}
+QT_END_NAMESPACE
 
 class AudioFile{
     protected:

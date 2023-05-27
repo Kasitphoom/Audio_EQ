@@ -21,6 +21,10 @@ set(PROJECT_SOURCES
         eq.h
         eq.ui
         resources.qrc
+        ${CMAKE_SOURCE_DIR}/../include/AudioFile.cpp
+        ${CMAKE_SOURCE_DIR}/../include/AudioFile.h
+        ${CMAKE_SOURCE_DIR}/../include/Music.h
+        ${CMAKE_SOURCE_DIR}/../include/Music.cpp
 )
 
 file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
