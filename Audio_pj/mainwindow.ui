@@ -123,7 +123,7 @@ YOUR FEEL'N</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-image: url(:/gear-solid 1.png);
+	background-image: url(:/gear-solid.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;
@@ -1105,7 +1105,7 @@ color: rgb(158, 170, 189)
      <property name="styleSheet">
       <string notr="true">QFrame {
 	
-	background-image: url(:/volume-high-solid 2.png);
+	background-image: url(:/volume-high-solid.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;
@@ -1132,7 +1132,7 @@ color: rgb(158, 170, 189)
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/button-play-solid 1.png);
+	background-image: url(:/button-play-solid.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;
@@ -1162,7 +1162,7 @@ color: rgb(158, 170, 189)
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/button-backward-solid 1.png);
+	background-image: url(:/button-backward-solid.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;
@@ -1229,7 +1229,7 @@ color: rgb(158, 170, 189)
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/button-forward-solid 1.png);
+	background-image: url(:/button-forward-solid.png);
     background-repeat: no-repeat;
     background-position: center;
 	border: none;

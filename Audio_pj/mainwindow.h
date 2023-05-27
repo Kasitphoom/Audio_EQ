@@ -8,6 +8,8 @@
 
 static bool en = true;
 static bool th = false;
+static bool tokyo = false;
+static bool lightblue = true;
 static EQ* eq;
 static int setting = 0;
 
@@ -35,6 +37,11 @@ private slots:
     void on_pushButton_27_clicked();
     void on_pushButton_14_clicked();
 //    void populateListWidget();
+    void Tokyo();
+    void Lightblue();
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_28_clicked();
 
 private:
     Ui::MainWindow *ui;

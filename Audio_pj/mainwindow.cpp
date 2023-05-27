@@ -9,7 +9,6 @@
 static bool setting_open = false;
 static bool playlist_click = false;
 static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF";
-static QString clicked_th = "QPushButton {font-style: normal;font-weight: 2000;font-size: 20px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF";
 static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
 
 
@@ -143,7 +142,7 @@ void MainWindow::on_pushButton_14_clicked()
 void MainWindow::on_pushButton_27_clicked() {
     if (!th){
         ui->pushButton_14->setStyleSheet(not_clicked);
-        ui->pushButton_27->setStyleSheet(clicked_th);
+        ui->pushButton_27->setStyleSheet(clicked);
         en = false;
         th = true;
         ui->label_13->setText("การตั้งค่า");
@@ -170,6 +169,33 @@ void MainWindow::on_pushButton_27_clicked() {
 //        ui->listWidget->addItem(fileName);
 //    }
 //}
+void MainWindow::on_pushButton_28_clicked()
+{
+    if (!lightblue) {
+        Lightblue();
+        lightblue = true;
+        tokyo = false;
+    }
+}
+void MainWindow::on_pushButton_29_clicked()
+{
+    if (!tokyo) {
+        Tokyo();
+        lightblue = false;
+        tokyo = true;
+    }
+}
+
+void MainWindow::Lightblue() {
+    ui->frame_5->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
+    ui->frame_6->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
+}
+
+void MainWindow::Tokyo() {
+    ui->frame_5->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
+    ui->frame_6->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
+}
+
 
 //std::vector<fs::path> AF::AudioFile::filesData;
 
@@ -341,5 +367,4 @@ void MainWindow::on_pushButton_27_clicked() {
 //        playMusic();
 //    });
 //}
-
 
