@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     std::thread thread;
 
     QApplication a(argc, argv);
-    MainWindow w(nullptr, thread);
+    MainWindow w(nullptr);
     w.setWindowTitle("Vibin studio");
     w.show();
     return a.exec();

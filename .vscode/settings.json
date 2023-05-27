@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "D:/Audio_EQ",
+    "cmake.sourceDirectory": "C:/Phong/kmitl/C++/Proj/Audio_EQ/Audio_pj",
     "files.associations": {
         "ostream": "cpp",
         "chrono": "cpp",
