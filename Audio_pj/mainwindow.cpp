@@ -100,7 +100,6 @@ void MainWindow::on_pushButton_8_clicked()
         ui->label_4->show();
         playlist_click = false;
     }
-
 }
 
 //std::vector<fs::path> AF::AudioFile::filesData;
