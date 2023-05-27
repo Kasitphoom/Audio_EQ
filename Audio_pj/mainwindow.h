@@ -32,6 +32,8 @@ private slots:
     void on_pushButton_8_clicked();
     void showMain();
     void showSetting();
+    void on_pushButton_27_clicked();
+    void on_pushButton_14_clicked();
 
 private:
     Ui::MainWindow *ui;

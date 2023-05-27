@@ -8,6 +8,10 @@
 
 static bool setting_open = false;
 static bool playlist_click = false;
+static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF";
+static QString clicked_th = "QPushButton {font-style: normal;font-weight: 2000;font-size: 20px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF";
+static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,6 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
 //    music.InitMusic();
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
+
+    ui->pushButton_14->setStyleSheet(clicked);
+    //receive vector of song_names
     for (int i = 0; i < 20; i++){
         ui->listWidget->addItem("Hello world");
     }
@@ -114,9 +121,41 @@ void MainWindow::on_pushButton_8_clicked()
         playlist_click = false;
         
     }
-
+}
+void MainWindow::on_pushButton_14_clicked()
+{
+    if (!en){
+        ui->pushButton_14->setStyleSheet(clicked);
+        ui->pushButton_27->setStyleSheet(not_clicked);
+        en = true;
+        th = false;
+        ui->label_13->setText("SETTINGS");
+        ui->label_10->setText("Language");
+        ui->label_11->setText("THEME");
+        ui->pushButton_28->setText("LIGHT");
+        ui->pushButton_29->setText("BLACK");
+        ui->pushButton_30->setText("CUSTOM");
+        ui->label_2->setText("DISCOVER \nYOUR FEEL'N");
+        ui->label_3->setText("is playing right now");
+    }
 }
 
+void MainWindow::on_pushButton_27_clicked() {
+    if (!th){
+        ui->pushButton_14->setStyleSheet(not_clicked);
+        ui->pushButton_27->setStyleSheet(clicked_th);
+        en = false;
+        th = true;
+        ui->label_13->setText("การตั้งค่า");
+        ui->label_10->setText("ภาษา");
+        ui->label_11->setText("ธีม");
+        ui->pushButton_28->setText("ขาว");
+        ui->pushButton_29->setText("ดำ");
+        ui->pushButton_30->setText("ปรับเอง");
+        ui->label_2->setText("ค้นพบ\nความรู้สึกของคุณ");
+        ui->label_3->setText("กำลังเล่นอยู่ตอนนี้");
+    }
+}
 //std::vector<fs::path> AF::AudioFile::filesData;
 
 //void AF::AudioFile::FileInit() {
@@ -287,6 +326,5 @@ void MainWindow::on_pushButton_8_clicked()
 //        playMusic();
 //    });
 //}
-
 
 
