@@ -5,6 +5,7 @@
 #include <thread>
 #include <QtMultimedia>
 #include "eq.h"
+#include "AudioFile.h"
 
 static bool en = true;
 static bool th = false;
@@ -42,10 +43,6 @@ private slots:
     void on_pushButton_29_clicked();
 
     void on_pushButton_28_clicked();
-
-    void on_horizontalSlider_valueChanged(int value);
-
-    void on_horizontalSlider_2_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
