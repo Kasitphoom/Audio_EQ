@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QApplication>
+#include <QFileDialog>
 #include <iostream>
 #include "eq.h"
 
@@ -38,10 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_28->setStyleSheet(clicked);
     //receive vector of song_names
 
-    for (auto& p: af->getFileNames()){
-        QFileInfo Files(QString::fromUtf8(p));
-        ui->listWidget->addItem(Files.baseName());
-    }
+    update_playlist();
     
     showMain();
 }
@@ -333,5 +331,50 @@ void MainWindow::on_pushButton_5_clicked()
                     background-position: center;\
                     border: none;\
                 }");
+}
+
+
+
+
+void MainWindow::on_Shuffle_btn_clicked()
+{
+    af->Shuffle();
+    update_playlist();
+}
+
+void MainWindow::update_playlist()
+{
+    ui->listWidget->clear();
+    for (auto& p: af->getFileNames()){
+        QFileInfo Files(QString::fromUtf8(p));
+        ui->listWidget->addItem(Files.baseName());
+    }
+}
+
+
+void MainWindow::on_listWidget_itemPressed(QListWidgetItem *item)
+{
+    int index = ui->listWidget->indexFromItem(item).row();
+    af->SetSongAtIndex(index);
+    update_filename();
+    setSource();
+    media->play();
+    ui->pushButton_6->setStyleSheet(
+                "QPushButton {\
+                    background-image: url(:/button-pause.png);\
+                    background-repeat: no-repeat;\
+                    background-position: center;\
+                    border: none;\
+                }");
+}
+
+
+void MainWindow::on_ImportFile_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Select Song"), "/Desktop", tr("Audio Files (*.wav *.mp3 *.flac)"));
+    QString dest = QString::fromUtf8(af->getFilePath() + '/');
+    if(!QFile::copy(fileName, dest)){
+        std::cout << "cannot move file: " << fileName.toStdString() << " -> " << dest.toStdString() << std::endl;
+    }
 }
 

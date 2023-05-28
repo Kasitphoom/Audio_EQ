@@ -54,6 +54,16 @@ void AF::AudioFile::InitCacheDir(){
     }
 }
 
+void AF::AudioFile::Shuffle()
+{
+    std::random_shuffle(filesData.begin(), filesData.end());
+}
+
+void AF::AudioFile::SetSongAtIndex(int index)
+{
+    this->index = index;
+}
+
 void AF::AudioFile::Next(){
     this->index++;
 }

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <thread>
 #include <QtMultimedia>
+#include <QListWidgetItem>
 #include "eq.h"
 #include "AudioFile.h"
 
@@ -63,6 +64,14 @@ private slots:
     void on_horizontalSlider_sliderReleased();
 
     void on_pushButton_5_clicked();
+
+    void on_Shuffle_btn_clicked();
+
+    void update_playlist();
+
+    void on_listWidget_itemPressed(QListWidgetItem *item);
+
+    void on_ImportFile_clicked();
 
 private:
     void updateduration(qint64 duration);

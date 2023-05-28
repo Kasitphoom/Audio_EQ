@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include <algorithm>
 
 namespace fs = std::filesystem;
 
@@ -25,6 +26,8 @@ class AudioFile{
         std::vector<char*> getFilesFullPath() const;
         virtual std::string getFilePath() const;
         static void InitCacheDir();
+        static void Shuffle();
+        void SetSongAtIndex(int index);
         void Next();
         void Previous();
         int CurrentIndex() const;
