@@ -53,12 +53,27 @@ private slots:
 
     void setSource();
 
+    void durationChanged(qint64 duration);
+    void positionChanged(qint64 pos);
+
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_horizontalSlider_sliderPressed();
+
+    void on_horizontalSlider_sliderReleased();
+
+    void on_pushButton_5_clicked();
+
 private:
+    void updateduration(qint64 duration);
+
     Ui::MainWindow *ui;
     EQ *eq;
     QMediaPlayer *media;
     QAudioOutput *auxOut;
     AF::AudioFile* af;
+
+    qint64 mediaPos;
 
     QString name;
 };

@@ -26,6 +26,11 @@ MainWindow::MainWindow(QWidget *parent)
     auxOut->setVolume(80);
     setSource();
 
+//    ui->horizontalSlider->setRange(0, (int)(media->duration() / 1000));
+
+    connect(media, &QMediaPlayer::durationChanged, this, &MainWindow::durationChanged);
+    connect(media, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
+
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
     // Connect a button's clicked signal to the populateListWidget() function
@@ -50,6 +55,33 @@ MainWindow::~MainWindow()
 void MainWindow::setSource(){
     QString filePaths = QString::fromUtf8(af->getFilesFullPath()[af->CurrentIndex()]);
     media->setSource(QUrl::fromLocalFile(filePaths));
+}
+
+void MainWindow::durationChanged(qint64 duration)
+{
+    mediaPos = duration / 1000;
+    ui->horizontalSlider->setMaximum(mediaPos);
+}
+
+void MainWindow::positionChanged(qint64 pos)
+{
+    if(!ui->horizontalSlider->isSliderDown()){
+        ui->horizontalSlider->setValue(pos / 1000);
+    }
+    updateduration(pos / 1000);
+}
+
+void MainWindow::updateduration(qint64 duration)
+{
+    QString timestr;
+    if (duration || mediaPos){
+        QTime CurrentTime((duration / 3600) % 60, (duration / 60) % 60, duration % 60, (duration * 1000) % 1000);
+        QTime TotalTime((mediaPos / 3600) % 60, (mediaPos / 60) % 60, (mediaPos % 60), (mediaPos * 1000) % 1000);
+        QString format = "mm:ss";
+        if(mediaPos > 3600) format = "hh:mm:ss";
+        ui->current_time->setText(CurrentTime.toString(format));
+        ui->total_time->setText(TotalTime.toString(format));
+    }
 }
 
 double MainWindow::map(double value, double min1, double max1, double min2, double max2) {
@@ -247,7 +279,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::update_filename(){
     QFileInfo File(QString::fromUtf8(af->getFileNames()[af->CurrentIndex()]));
-    this->name = File.fileName();
+    this->name = File.baseName();
     ui->label_4->setText(this->name);
 }
 
@@ -255,6 +287,40 @@ void MainWindow::update_filename(){
 void MainWindow::on_pushButton_7_clicked()
 {
     af->Next();
+    update_filename();
+    setSource();
+    media->play();
+    ui->pushButton_6->setStyleSheet(
+                "QPushButton {\
+                    background-image: url(:/button-pause.png);\
+                    background-repeat: no-repeat;\
+                    background-position: center;\
+                    border: none;\
+                }");
+}
+
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+
+}
+
+
+void MainWindow::on_horizontalSlider_sliderPressed()
+{
+
+}
+
+
+void MainWindow::on_horizontalSlider_sliderReleased()
+{
+    media->setPosition(ui->horizontalSlider->value() * 1000);
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    af->Previous();
     update_filename();
     setSource();
     media->play();

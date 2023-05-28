@@ -1,7 +1,5 @@
-#define SDL_MAIN_HANDLED
 #include "mainwindow.h"
 
-#include "SDL2/SDL.h"
 #include <QApplication>
 #include <thread>
 #include <iostream>
