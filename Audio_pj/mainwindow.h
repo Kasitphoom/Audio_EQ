@@ -30,7 +30,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
+    double map(double value, double min1, double max1, double min2, double max2);
     void on_pushButton_8_clicked();
     void showMain();
     void showSetting();
@@ -47,11 +47,20 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void update_filename();
+
+    void on_pushButton_7_clicked();
+
+    void setSource();
+
 private:
     Ui::MainWindow *ui;
     EQ *eq;
     QMediaPlayer *media;
     QAudioOutput *auxOut;
+    AF::AudioFile* af;
+
+    QString name;
 };
 
 #endif // MAINWINDOW_H

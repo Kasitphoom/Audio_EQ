@@ -17,17 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    AF::AudioFile* af;
     af = new AF::AudioFileCache();
 
     media = new QMediaPlayer();
     auxOut = new QAudioOutput();
     media->setAudioOutput(auxOut);
     connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
-    QString filename = QString::fromUtf8(af->getFilesFullPath()[af->CurrentIndex()]);
-    media->setSource(QUrl::fromLocalFile(filename));
-    auxOut->setVolume(100);
-//    media->play();
+    auxOut->setVolume(80);
+    setSource();
 
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
@@ -48,6 +45,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setSource(){
+    QString filePaths = QString::fromUtf8(af->getFilesFullPath()[af->CurrentIndex()]);
+    media->setSource(QUrl::fromLocalFile(filePaths));
+}
+
+double MainWindow::map(double value, double min1, double max1, double min2, double max2) {
+    return min2 + (max2 - min2) * ((value - min1) / (max1 - min1));
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -208,20 +214,56 @@ void MainWindow::Tokyo() {
 
 void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 {
-    auxOut->setVolume(value);
+    auxOut->setVolume(map(value, 0, 100, 0, 1));
 }
 
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    ui->label_4->setText(test);
+    update_filename();
     if(!playclicked){
         media->play();
         playclicked = true;
+        ui->pushButton_6->setStyleSheet(
+                    "QPushButton {\
+                        background-image: url(:/button-pause.png);\
+                        background-repeat: no-repeat;\
+                        background-position: center;\
+                        border: none;\
+                    }");
         return;
     }
-    media->stop();
+    media->pause();
     playclicked = false;
+    ui->pushButton_6->setStyleSheet(
+                "QPushButton {\
+                    background-image: url(:/button-play-solid.png);\
+                    background-repeat: no-repeat;\
+                    background-position: center;\
+                    border: none;\
+                }");
     return;
+}
+
+void MainWindow::update_filename(){
+    QFileInfo File(QString::fromUtf8(af->getFileNames()[af->CurrentIndex()]));
+    this->name = File.fileName();
+    ui->label_4->setText(this->name);
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    af->Next();
+    update_filename();
+    setSource();
+    media->play();
+    ui->pushButton_6->setStyleSheet(
+                "QPushButton {\
+                    background-image: url(:/button-pause.png);\
+                    background-repeat: no-repeat;\
+                    background-position: center;\
+                    border: none;\
+                }");
 }
 
