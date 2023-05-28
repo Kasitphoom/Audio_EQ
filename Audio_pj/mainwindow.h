@@ -5,7 +5,6 @@
 #include <thread>
 #include <QtMultimedia>
 #include "eq.h"
-#include "Music.h"
 
 static bool en = true;
 static bool th = false;
