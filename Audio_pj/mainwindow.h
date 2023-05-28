@@ -73,6 +73,8 @@ private slots:
 
     void on_ImportFile_clicked();
 
+    void on_ImportFolder_clicked();
+
 private:
     void updateduration(qint64 duration);
 

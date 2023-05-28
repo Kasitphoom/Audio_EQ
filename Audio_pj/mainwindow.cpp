@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QApplication>
+#include <QCoreApplication>
 #include <QFileDialog>
 #include <iostream>
 #include "eq.h"
@@ -290,6 +291,7 @@ void MainWindow::on_pushButton_7_clicked()
     update_filename();
     setSource();
     media->play();
+    playclicked = true;
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
                     background-image: url(:/button-pause.png);\
@@ -324,6 +326,7 @@ void MainWindow::on_pushButton_5_clicked()
     update_filename();
     setSource();
     media->play();
+    playclicked = true;
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
                     background-image: url(:/button-pause.png);\
@@ -344,11 +347,14 @@ void MainWindow::on_Shuffle_btn_clicked()
 
 void MainWindow::update_playlist()
 {
+    std::cout << "updating playlist...." << std::endl;
     ui->listWidget->clear();
     for (auto& p: af->getFileNames()){
         QFileInfo Files(QString::fromUtf8(p));
         ui->listWidget->addItem(Files.baseName());
+        std::cout << Files.baseName().toStdString() << std::endl;
     }
+    std::cout << "playlist updated!!" << std::endl;
 }
 
 
@@ -359,6 +365,7 @@ void MainWindow::on_listWidget_itemPressed(QListWidgetItem *item)
     update_filename();
     setSource();
     media->play();
+    playclicked = true;
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
                     background-image: url(:/button-pause.png);\
@@ -371,10 +378,48 @@ void MainWindow::on_listWidget_itemPressed(QListWidgetItem *item)
 
 void MainWindow::on_ImportFile_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Select Song"), "/Desktop", tr("Audio Files (*.wav *.mp3 *.flac)"));
-    QString dest = QString::fromUtf8(af->getFilePath() + '/');
-    if(!QFile::copy(fileName, dest)){
-        std::cout << "cannot move file: " << fileName.toStdString() << " -> " << dest.toStdString() << std::endl;
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Select Song"), "", tr("Audio Files (*.wav *.mp3 *.flac)"));
+    QFile file(fileName);
+    QFileInfo fileinfo(fileName);
+
+    QString dest = QString::fromUtf8(af->getFilePath().c_str());\
+
+    QFileInfo destInfo(dest);
+    QString destPath(destInfo.path());
+    QDir destDir(destPath);
+
+    if(!destDir.exists()){
+        std::cout << destDir.path().toStdString() << " does not exist" << std::endl;
+        return;
     }
+
+    std::cout << "Destination path: " << dest.toStdString() << std::endl;
+
+    if (file.exists()) {
+        if (file.copy(dest + QDir::separator() + fileinfo.fileName())) {
+            std::cout << "Success move file: " << file.fileName().toStdString() << " to " << (dest + QDir::separator() + fileinfo.fileName()).toStdString() << std::endl;
+            af->UpdateFiles();
+            update_playlist();
+            return;
+        } else {
+            std::cout << "Failed to move file" << file.fileName().toStdString() << " to " << (dest + QDir::separator() + fileinfo.fileName()).toStdString() << std::endl;
+            return;
+        }
+    } else {
+        std::cout << "File does not exist" << std::endl;
+        return;
+    }
+}
+
+
+
+
+void MainWindow::on_ImportFolder_clicked()
+{
+    QString filename= QFileDialog::getExistingDirectory(this,"Choose Folder");
+    if (filename.isEmpty()) return;
+    ui->listWidget->clear();
+    af = new AF::AudioFileCustom(filename.toStdString());
+    update_playlist();
 }
 

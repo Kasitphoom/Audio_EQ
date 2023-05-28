@@ -2,8 +2,6 @@
 #define FILE_CACHE_PATH "audio_cache"
 #include <iostream>
 
-std::vector<fs::path> AF::AudioFile::filesData;
-
 void AF::AudioFile::FileInit() {
     AudioFile::InitCacheDir();
     fs::path audioPath = fs::path(FILE_CACHE_PATH);
@@ -59,6 +57,11 @@ void AF::AudioFile::Shuffle()
     std::random_shuffle(filesData.begin(), filesData.end());
 }
 
+void AF::AudioFile::UpdateFiles()
+{
+
+}
+
 void AF::AudioFile::SetSongAtIndex(int index)
 {
     this->index = index;
@@ -77,11 +80,27 @@ int AF::AudioFile::CurrentIndex() const{
 }
 
 // AudioFileCache
+void AF::AudioFileCache::UpdateFiles()
+{
+    filesData.clear();
+    AudioFile::InitCacheDir();
+    fs::path audioPath = fs::path(FILE_CACHE_PATH);
+    std::vector<fs::path> audioFiles;
+    for(auto& p: fs::directory_iterator(audioPath)) {
+        filesData.push_back(p.path());
+    }
+}
+
 std::string AF::AudioFileCache::getFilePath() const{
     return FILE_CACHE_PATH;
 }
 
 // AudioFileCustom
+void AF::AudioFileCustom::UpdateFiles()
+{
+
+}
+
 std::string AF::AudioFileCustom::getFilePath() const{
     return filesData[0].parent_path().string();
 }

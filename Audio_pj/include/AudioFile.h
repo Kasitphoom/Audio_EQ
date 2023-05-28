@@ -15,18 +15,19 @@ namespace fs = std::filesystem;
 namespace AF{
 class AudioFile{
     protected:
-        static std::vector<fs::path> filesData;
+        std::vector<fs::path> filesData;
         int index = 0;
     public:
         AudioFile(){};
         virtual ~AudioFile(){};
-        static void FileInit();
-        static void FileInit(std::string path);
+        void FileInit();
+        void FileInit(std::string path);
         std::vector<char*> getFileNames() const;
         std::vector<char*> getFilesFullPath() const;
         virtual std::string getFilePath() const;
-        static void InitCacheDir();
-        static void Shuffle();
+        void InitCacheDir();
+        void Shuffle();
+        virtual void UpdateFiles();
         void SetSongAtIndex(int index);
         void Next();
         void Previous();
@@ -39,6 +40,7 @@ class AudioFileCache: public AudioFile{
         virtual ~AudioFileCache(){
             filesData.clear();
         };
+        virtual void UpdateFiles();
         virtual std::string getFilePath() const override;
 };
 
@@ -48,6 +50,7 @@ class AudioFileCustom: public AudioFile{
         virtual ~AudioFileCustom(){
             filesData.clear();
         };
+        virtual void UpdateFiles();
         virtual std::string getFilePath() const override;
 };
 };

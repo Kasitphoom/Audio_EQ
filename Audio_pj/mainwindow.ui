@@ -992,7 +992,7 @@ color: rgb(158, 170, 189)
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="ImportFolder">
      <property name="geometry">
       <rect>
        <x>54</x>
