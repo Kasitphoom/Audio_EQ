@@ -24,10 +24,10 @@ MainWindow::MainWindow(QWidget *parent)
     auxOut = new QAudioOutput();
     media->setAudioOutput(auxOut);
     connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
-
-    media->setSource(QUrl::fromLocalFile("audio_cache/10000hrs.wav"));
+    QString filename = QString::fromUtf8(af->getFilesFullPath()[af->CurrentIndex()]);
+    media->setSource(QUrl::fromLocalFile(filename));
     auxOut->setVolume(100);
-    media->play();
+//    media->play();
 
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
@@ -37,8 +37,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_14->setStyleSheet(clicked);
     ui->pushButton_28->setStyleSheet(clicked);
     //receive vector of song_names
-    for (int i = 0; i < 20; i++){
-        ui->listWidget->addItem("Hello world");
+
+    for (auto& p: af->getFileNames()){
+        ui->listWidget->addItem(QString::fromUtf8(p));
     }
     
     showMain();
@@ -47,18 +48,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::myclicked(){
-    ui->label_4->setText(test);
-    if(!playclicked){
-        media->play();
-        playclicked = true;
-        return;
-    }
-    media->stop();
-    playclicked = false;
-    return;
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -220,5 +209,19 @@ void MainWindow::Tokyo() {
 void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 {
     auxOut->setVolume(value);
+}
+
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    ui->label_4->setText(test);
+    if(!playclicked){
+        media->play();
+        playclicked = true;
+        return;
+    }
+    media->stop();
+    playclicked = false;
+    return;
 }
 

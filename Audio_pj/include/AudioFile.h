@@ -15,6 +15,7 @@ namespace AF{
 class AudioFile{
     protected:
         static std::vector<fs::path> filesData;
+        int index = 0;
     public:
         AudioFile(){};
         virtual ~AudioFile(){};
@@ -24,6 +25,9 @@ class AudioFile{
         std::vector<char*> getFilesFullPath() const;
         virtual std::string getFilePath() const;
         static void InitCacheDir();
+        void Next();
+        void Previous();
+        int CurrentIndex() const;
 };
 
 class AudioFileCache: public AudioFile{

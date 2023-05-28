@@ -54,6 +54,18 @@ void AF::AudioFile::InitCacheDir(){
     }
 }
 
+void AF::AudioFile::Next(){
+    this->index++;
+}
+
+void AF::AudioFile::Previous(){
+    this->index--;
+}
+
+int AF::AudioFile::CurrentIndex() const{
+    return this->index;
+}
+
 // AudioFileCache
 std::string AF::AudioFileCache::getFilePath() const{
     return FILE_CACHE_PATH;

@@ -30,7 +30,6 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void myclicked();
 
     void on_pushButton_8_clicked();
     void showMain();
@@ -45,6 +44,8 @@ private slots:
     void on_pushButton_28_clicked();
 
     void on_horizontalSlider_2_valueChanged(int value);
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::MainWindow *ui;
