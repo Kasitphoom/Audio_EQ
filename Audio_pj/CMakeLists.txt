@@ -11,25 +11,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Multimedia)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        eq.cpp
-        eq.h
-        eq.ui
-        resources.qrc
-        ${CMAKE_SOURCE_DIR}/../include/AudioFile.h
-        ${CMAKE_SOURCE_DIR}/../include/Music.h
+    ${CMAKE_SOURCE_DIR}/include/AudioFile.h
+    ${CMAKE_SOURCE_DIR}/include/Music.h
+    ${CMAKE_SOURCE_DIR}/include/Music.cpp
+    ${CMAKE_SOURCE_DIR}/include/AudioFile.cpp
+    main.cpp
+    mainwindow.cpp
+    mainwindow.h
+    mainwindow.ui
+    eq.cpp
+    eq.h
+    eq.ui
+    resources.qrc
 )
 
-file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(COPY ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/bin/SDL2_mixer.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/bin/SDL2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/bin/SDL2_mixer.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 
-link_directories(${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib)
+link_directories(${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Audio_pj
@@ -54,20 +57,35 @@ else()
     endif()
 endif()
 
-target_include_directories(Audio_pj PRIVATE ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
-target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/include)
-target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/../include)
+#add_executable(musicFile ${CMAKE_SOURCE_DIR}/include/Music.cpp)
+message(STATUS "${CMAKE_SOURCE_DIR}/include/Music.cpp")
+
+target_include_directories(Audio_pj PRIVATE ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/include)
+target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/include)
+target_include_directories(Audio_pj PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
+include_directories(${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 target_link_libraries(Audio_pj PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Audio_pj PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
 
-target_link_libraries(Audio_pj PRIVATE
-    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a
-    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2.a
-    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2main.a
-    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
-    ${CMAKE_SOURCE_DIR}/../SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.a
-    ${CMAKE_SOURCE_DIR}/../include/Music.h
+target_link_libraries(Audio_pj PUBLIC
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2main.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
+    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.a
 )
+message(STATUS "${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a")
+#target_link_libraries(musicFile PRIVATE
+#    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.dll.a
+#    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2.a
+#    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2main.a
+#    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
+#    ${CMAKE_SOURCE_DIR}/SDL/x86_64-w64-mingw32/lib/libSDL2_mixer.a
+#)
+
 
 set_target_properties(Audio_pj PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
