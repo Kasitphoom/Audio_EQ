@@ -8,6 +8,7 @@
 
 static bool setting_open = false;
 static bool playlist_click = false;
+static bool playclicked = false;
 static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF}";
 static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
 
@@ -21,6 +22,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     media = new QMediaPlayer();
     auxOut = new QAudioOutput();
+    media->setAudioOutput(auxOut);
+    connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+
+    media->setSource(QUrl::fromLocalFile("audio_cache/10000hrs.wav"));
+    auxOut->setVolume(100);
+    media->play();
 
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
@@ -44,6 +51,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::myclicked(){
     ui->label_4->setText(test);
+    if(!playclicked){
+        media->play();
+        playclicked = true;
+        return;
+    }
+    media->stop();
+    playclicked = false;
+    return;
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -199,5 +214,11 @@ void MainWindow::Lightblue() {
 void MainWindow::Tokyo() {
     ui->frame_5->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
     ui->frame_6->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
+}
+
+
+void MainWindow::on_horizontalSlider_2_valueChanged(int value)
+{
+    auxOut->setVolume(value);
 }
 
