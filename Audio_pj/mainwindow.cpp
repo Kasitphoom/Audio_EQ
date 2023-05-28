@@ -19,14 +19,21 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     af = new AF::AudioFileCache();
 
     media = new QMediaPlayer();
+
     auxOut = new QAudioOutput();
+
     media->setAudioOutput(auxOut);
+
     connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+
     auxOut->setVolume(80);
+
     setSource();
+
 
     connect(media, &QMediaPlayer::durationChanged, this, &MainWindow::durationChanged);
     connect(media, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
@@ -51,6 +58,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::setSource(){
+    if (af->getFilesFullPath().size() == 0) return;
+
     QString filePaths = QString::fromUtf8(af->getFilesFullPath()[af->CurrentIndex()]);
     media->setSource(QUrl::fromLocalFile(filePaths));
 }
@@ -198,20 +207,6 @@ void MainWindow::on_pushButton_27_clicked() {
     }
 }
 
-//void MainWindow::populateListWidget()
-//{
-//    QString folderPath = "../album/playlist1"; // Replace with the actual folder path
-
-//    QDir directory(folderPath);
-//    QStringList fileList = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
-
-//    ui->listWidget->clear();
-
-//    foreach (QString fileName, fileList)
-//    {
-//        ui->listWidget->addItem(fileName);
-//    }
-//}
 void MainWindow::on_pushButton_28_clicked()
 {
     if (!lightblue) {
@@ -233,16 +228,6 @@ void MainWindow::on_pushButton_29_clicked()
     }
 }
 
-void MainWindow::Lightblue() {
-    ui->frame_5->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
-    ui->frame_6->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;;");
-}
-
-void MainWindow::Tokyo() {
-    ui->frame_5->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
-    ui->frame_6->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;;");
-}
-
 
 void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 {
@@ -252,6 +237,9 @@ void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 
 void MainWindow::on_pushButton_6_clicked()
 {
+    if (af->getFilesFullPath().size() == 0){
+
+    }
     update_filename();
     if(!playclicked){
         media->play();
@@ -287,9 +275,11 @@ void MainWindow::update_filename(){
 
 void MainWindow::on_pushButton_7_clicked()
 {
+    std::cout << "Skip" <<std::endl;
     af->Next();
     update_filename();
     setSource();
+    std::cout << af->getFileNames()[af->CurrentIndex()] << std::endl;
     media->play();
     playclicked = true;
     ui->pushButton_6->setStyleSheet(
@@ -304,7 +294,11 @@ void MainWindow::on_pushButton_7_clicked()
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
-
+    if(ui->horizontalSlider->value() == mediaPos){
+        ui->horizontalSlider->setValue(0);
+        ui->horizontalSlider->setSliderPosition(0);
+        ui->pushButton_7->click();
+    }
 }
 
 
@@ -352,7 +346,6 @@ void MainWindow::update_playlist()
     for (auto& p: af->getFileNames()){
         QFileInfo Files(QString::fromUtf8(p));
         ui->listWidget->addItem(Files.baseName());
-        std::cout << Files.baseName().toStdString() << std::endl;
     }
     std::cout << "playlist updated!!" << std::endl;
 }
@@ -423,3 +416,230 @@ void MainWindow::on_ImportFolder_clicked()
     update_playlist();
 }
 
+void MainWindow::Lightblue() {
+    ui->frame_5->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;");
+    ui->frame_6->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;");
+    ui->label_13->setStyleSheet("font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 27px;\
+                                line-height: 41px;\
+                                letter-spacing: -1px;\
+                                color: #1A4568;");
+    ui->centralwidget->setStyleSheet("background-color: rgb(144, 175, 196);");
+    ui->frame->setStyleSheet("background-image: url(:/Dis_pic.png);");
+    ui->ImportFolder->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-Vector.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->ImportFile->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-file-import.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->Shuffle_btn->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-shuffle.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->pushButton_8->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-list.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->label->setStyleSheet("QLabel {\
+                            background-color: rgb(95, 132, 161);\
+                            border-radius: 151px;\
+                            }");
+    ui->label_2->setStyleSheet("letter-spacing: -2px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                background-color: transparent;\
+                                color: #1A4568	\
+                                ");
+    ui->pushButton_5->setStyleSheet("QPushButton {\
+        background-image: url(:/button-backward-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton_6->setStyleSheet("QPushButton {\
+        background-image: url(:/button-play-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton_7->setStyleSheet("QPushButton {\
+        background-image: url(:/button-forward-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->frame_2->setStyleSheet("QFrame {\
+        background-image: url(:/voulume-off-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->frame_3->setStyleSheet("QFrame {\
+        background-image: url(:/volume-high-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton->setStyleSheet("QPushButton {\
+        background-image: url(:/gear-solid.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->label_4->setStyleSheet("letter-spacing: -1px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 25px;\
+                                line-height: 38px;\
+                                text-align: center;\
+                                color: #1A4568;\
+                                qproperty-alignment: 'AlignCenter';");
+    ui->label_3->setStyleSheet("QLabel{\
+                                qproperty-alignment: 'AlignCenter';\
+                                background-color: transparent;\
+                                color: #B6D0E1\
+                                }");
+    ui->frame_4->setStyleSheet("image: url(:/Dis_pic.png);\
+                                background-color: transparent;");
+    ui->label_6->setStyleSheet("letter-spacing: -1px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 25px;\
+                                line-height: 38px;\
+                                text-align: center;\
+                                color: #1A4568;\
+                                background-color: transparent;\
+                                qproperty-alignment: 'AlignCenter';");
+    ui->label_5->setStyleSheet("QLabel{\
+                                qproperty-alignment: 'AlignCenter';\
+                                background-color: transparent;\
+                                color: #B6D0E1\
+                                }");
+    ui->listWidget->setStyleSheet("background-color: rgb(182, 208, 225); color: rgb(26, 69, 104);");
+}
+
+void MainWindow::Tokyo() {
+    ui->frame_5->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;");
+    ui->frame_6->setStyleSheet("background-color:   #7B007C   ;border-radius: 25px;");
+    ui->label_13->setStyleSheet("font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 27px;\
+                                line-height: 41px;\
+                                letter-spacing: -1px;\
+                                color: #7B007C;");
+    ui->centralwidget->setStyleSheet("background-color: #100043;");
+    ui->frame->setStyleSheet("background-image: url(:/Dis_pic2.png);");
+    ui->ImportFolder->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-Vector2.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->ImportFile->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-file-import2.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->Shuffle_btn->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-icon-shuffle2.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->pushButton_8->setStyleSheet("QPushButton {\
+                                    background-image: url(:/button-list2.png);\
+                                    background-repeat: no-repeat;\
+                                    background-position: center;\
+                                    border: none;\
+                                    }");
+    ui->label->setStyleSheet("QLabel {\
+                            background-color: #282DB1;\
+                            border-radius: 151px;\
+                            }");
+    ui->label_2->setStyleSheet("letter-spacing: -2px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                background-color: transparent;\
+                                color: #008D87	\
+                                ");
+    ui->pushButton_5->setStyleSheet("QPushButton {\
+        background-image: url(:/button-backward-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton_6->setStyleSheet("QPushButton {\
+        background-image: url(:/button-play-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton_7->setStyleSheet("QPushButton {\
+        background-image: url(:/button-forward-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->frame_2->setStyleSheet("QFrame {\
+        background-image: url(:/voulume-off-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->frame_3->setStyleSheet("QFrame {\
+        background-image: url(:/volume-high-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->pushButton->setStyleSheet("QPushButton {\
+        background-image: url(:/gear-solid2.png);\
+        background-repeat: no-repeat;\
+        background-position: center;\
+        border: none;\
+    }");
+    ui->label_4->setStyleSheet("letter-spacing: -1px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 25px;\
+                                line-height: 38px;\
+                                text-align: center;\
+                                color: #7B007C;\
+                                qproperty-alignment: 'AlignCenter';");
+    ui->label_3->setStyleSheet("QLabel{\
+                                qproperty-alignment: 'AlignCenter';\
+                                background-color: transparent;\
+                                color: #008D87\
+                                }");
+    ui->frame_4->setStyleSheet("image: url(:/Dis_pic2.png);\
+                                background-color: transparent;");
+    ui->label_6->setStyleSheet("letter-spacing: -1px;\
+                                font-style: normal;\
+                                font-weight: 2000;\
+                                font-size: 25px;\
+                                line-height: 38px;\
+                                text-align: center;\
+                                color: #7B007C;\
+                                background-color: transparent;\
+                                qproperty-alignment: 'AlignCenter';");
+    ui->label_5->setStyleSheet("QLabel{\
+                                qproperty-alignment: 'AlignCenter';\
+                                background-color: transparent;\
+                                color: #008D87\
+                                }");
+
+    ui->listWidget->setStyleSheet("background-color: transparent; color: #7B007C;");
+
+}

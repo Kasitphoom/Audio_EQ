@@ -59,6 +59,13 @@
       <height>303</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <family>Prompt Bold</family>
+      <pointsize>16</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
 	background-color: rgb(95, 132, 161);
@@ -83,8 +90,8 @@
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI</family>
-      <pointsize>27</pointsize>
+      <family>Prompt Bold</family>
+      <pointsize>25</pointsize>
       <italic>false</italic>
       <bold>true</bold>
       <underline>false</underline>
@@ -117,6 +124,13 @@ YOUR FEEL'N</string>
       <width>28</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Prompt Bold</family>
+      <pointsize>16</pointsize>
+      <italic>true</italic>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -175,7 +189,9 @@ YOUR FEEL'N</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <family>Prompt</family>
+      <pointsize>10</pointsize>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -193,15 +209,15 @@ YOUR FEEL'N</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>140</y>
-      <width>261</width>
+      <width>361</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI</family>
+      <family>Prompt Bold</family>
       <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>true</bold>
@@ -223,6 +239,7 @@ line-height: 38px;
 text-align: center;
 color: #1A4568;
 qproperty-alignment: 'AlignCenter';
+
 </string>
     </property>
     <property name="text">
@@ -240,7 +257,9 @@ qproperty-alignment: 'AlignCenter';
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <family>Prompt</family>
+      <pointsize>10</pointsize>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -258,15 +277,15 @@ qproperty-alignment: 'AlignCenter';
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>40</x>
       <y>20</y>
-      <width>211</width>
+      <width>321</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI</family>
+      <family>Prompt Bold</family>
       <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>true</bold>
@@ -322,6 +341,14 @@ background-color: transparent;</string>
       <width>93</width>
       <height>29</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Prompt Bold</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -768,7 +795,7 @@ color: rgb(158, 170, 189)
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Prompt</family>
         <pointsize>-1</pointsize>
         <italic>false</italic>
         <bold>true</bold>
@@ -793,6 +820,14 @@ color: #FFFFFF;</string>
         <width>93</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Prompt</family>
+        <pointsize>-1</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -820,6 +855,14 @@ color: rgb(158, 170, 189)
         <width>93</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Prompt</family>
+        <pointsize>-1</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -873,7 +916,7 @@ border-radius: 25px;;</string>
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Prompt</family>
         <pointsize>-1</pointsize>
         <italic>false</italic>
         <bold>true</bold>
@@ -898,6 +941,14 @@ color: #FFFFFF;</string>
         <width>93</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Prompt</family>
+        <pointsize>-1</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -926,6 +977,14 @@ color: rgb(158, 170, 189)
         <width>93</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Prompt</family>
+        <pointsize>-1</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -1320,7 +1379,7 @@ color: rgb(158, 170, 189)
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI</family>
+      <family>Prompt Bold</family>
       <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>true</bold>
@@ -1348,8 +1407,17 @@ color: #1A4568;</string>
       <height>251</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Prompt</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(182, 208, 225);</string>
+     <string notr="true">background-color: rgb(182, 208, 225);
+color: rgb(26, 69, 104);</string>
     </property>
    </widget>
   </widget>

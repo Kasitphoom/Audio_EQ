@@ -15,7 +15,11 @@ void AF::AudioFile::FileInit(std::string path){
     fs::path audioPath = fs::path(path);
     std::vector<fs::path> audioFiles;
     for(auto& p: fs::directory_iterator(audioPath)) {
-        filesData.push_back(p.path());
+        fs::path filePath = p.path();
+        std::string extension = filePath.extension().string();
+        if (extension == ".wav" || extension == ".mp3" || extension == ".flac") {
+            filesData.push_back(filePath);
+        }
     }
 }
 
@@ -68,10 +72,12 @@ void AF::AudioFile::SetSongAtIndex(int index)
 }
 
 void AF::AudioFile::Next(){
+    if(index + 1 > filesData.size() - 1) {this->index = 0; return;}
     this->index++;
 }
 
 void AF::AudioFile::Previous(){
+    if(index - 1 < 0) {this->index = filesData.size() - 1; return;}
     this->index--;
 }
 
