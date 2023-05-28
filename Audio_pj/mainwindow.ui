@@ -167,9 +167,9 @@ YOUR FEEL'N</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>115</x>
+      <x>105</x>
       <y>180</y>
-      <width>191</width>
+      <width>201</width>
       <height>22</height>
      </rect>
     </property>
@@ -193,9 +193,9 @@ YOUR FEEL'N</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>70</x>
       <y>140</y>
-      <width>131</width>
+      <width>261</width>
       <height>31</height>
      </rect>
     </property>
@@ -222,6 +222,7 @@ font-size: 25px;
 line-height: 38px;
 text-align: center;
 color: #1A4568;
+qproperty-alignment: 'AlignCenter';
 </string>
     </property>
     <property name="text">
@@ -257,9 +258,9 @@ color: #1A4568;
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>100</x>
       <y>20</y>
-      <width>131</width>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
@@ -286,7 +287,8 @@ font-size: 25px;
 line-height: 38px;
 text-align: center;
 color: #1A4568;
-background-color: transparent;</string>
+background-color: transparent;
+qproperty-alignment: 'AlignCenter';</string>
     </property>
     <property name="text">
      <string>DISCOVER</string>

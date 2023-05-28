@@ -26,8 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     auxOut->setVolume(80);
     setSource();
 
-//    ui->horizontalSlider->setRange(0, (int)(media->duration() / 1000));
-
     connect(media, &QMediaPlayer::durationChanged, this, &MainWindow::durationChanged);
     connect(media, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
 
@@ -41,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
     //receive vector of song_names
 
     for (auto& p: af->getFileNames()){
-        ui->listWidget->addItem(QString::fromUtf8(p));
+        QFileInfo Files(QString::fromUtf8(p));
+        ui->listWidget->addItem(Files.baseName());
     }
     
     showMain();
@@ -179,6 +178,7 @@ void MainWindow::on_pushButton_14_clicked()
         ui->pushButton_29->setText("DARK");
         ui->label_2->setText("DISCOVER \nYOUR FEEL'N");
         ui->label_3->setText("is playing right now");
+        ui->label_5->setText("is playing right now");
     }
 }
 
@@ -195,6 +195,7 @@ void MainWindow::on_pushButton_27_clicked() {
         ui->pushButton_29->setText("ดำ");
         ui->label_2->setText("ค้นพบ\nความรู้สึกของคุณ");
         ui->label_3->setText("กำลังเล่นอยู่ตอนนี้");
+        ui->label_5->setText("กำลังเล่นอยู่ตอนนี้");
     }
 }
 
@@ -281,6 +282,7 @@ void MainWindow::update_filename(){
     QFileInfo File(QString::fromUtf8(af->getFileNames()[af->CurrentIndex()]));
     this->name = File.baseName();
     ui->label_4->setText(this->name);
+    ui->label_6->setText(this->name);
 }
 
 
