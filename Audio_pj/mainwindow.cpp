@@ -303,7 +303,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::update_filename(){
     QFileInfo File(QString::fromUtf8(af->getFileNames()[af->CurrentIndex()]));
-    this->name = File.baseName();
+    this->name = File.baseName() + " ";
     ui->label_4->setText(this->name);
     ui->label_6->setText(this->name);
     scrollText();
@@ -760,7 +760,7 @@ void MainWindow::scrollText()
         }
     } else {
         if (scrollTimer && !scrollTimer->isActive()) {
-            scrollTimer->start(250);
+            scrollTimer->start(200);
         }
     }
 
