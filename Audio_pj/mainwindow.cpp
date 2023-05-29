@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
     //receive vector of song_names
 
     update_playlist();
-    
+
     showMain();
 }
 
@@ -311,7 +311,6 @@ void MainWindow::update_filename(){
     ui->label_4->setText(this->name);
     ui->label_6->setText(this->name);
 }
-
 
 void MainWindow::on_pushButton_7_clicked()
 {
