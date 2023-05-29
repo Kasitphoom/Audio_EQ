@@ -751,7 +751,7 @@ color: rgb(158, 170, 189)
       <x>0</x>
       <y>90</y>
       <width>401</width>
-      <height>341</height>
+      <height>681</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1004,6 +1004,71 @@ color: rgb(158, 170, 189)
        <string>ไทย</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>430</y>
+       <width>331</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Prompt</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">qproperty-alignment: 'AlignCenter';
+color: rgb(26, 69, 104);</string>
+     </property>
+     <property name="text">
+      <string>Audio Device Output Preferences</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>470</y>
+       <width>361</width>
+       <height>192</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Prompt</family>
+       <pointsize>10</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(26, 69, 104);</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>38</x>
+       <y>450</y>
+       <width>321</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Prompt</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">qproperty-alignment: 'AlignCenter';</string>
+     </property>
+     <property name="text">
+      <string>Double-Click to change</string>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="frame_9">
@@ -1420,6 +1485,21 @@ color: #1A4568;</string>
 color: rgb(26, 69, 104);</string>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>frame</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>frame_4</zorder>
+   <zorder>pushButton_31</zorder>
+   <zorder>frame_7</zorder>
+   <zorder>frame_9</zorder>
+   <zorder>label_13</zorder>
+   <zorder>listWidget</zorder>
+   <zorder>frame_8</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

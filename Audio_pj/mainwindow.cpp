@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QCoreApplication>
 #include <QFileDialog>
+#include <QAudioDevice>
 #include <iostream>
 #include "eq.h"
 
@@ -25,6 +26,24 @@ MainWindow::MainWindow(QWidget *parent)
     media = new QMediaPlayer();
 
     auxOut = new QAudioOutput();
+
+    const auto devices = QMediaDevices::audioOutputs();
+    for (const QAudioDevice &device : devices){
+        OutputDevices.push_back(device);
+    }
+
+    QAudioFormat format;
+    // Set up the format, eg.
+    format.setSampleRate(48000);
+    format.setChannelCount(2);
+    format.setSampleFormat(QAudioFormat::UInt8);
+
+    QAudioDevice info(QMediaDevices::defaultAudioOutput());
+    if (!info.isFormatSupported(format)) {
+        qWarning() << "Raw audio format not supported by backend, cannot play audio.";
+        return;
+    }
+
 
     media->setAudioOutput(auxOut);
 
@@ -129,6 +148,7 @@ void MainWindow::showMain() {
 void MainWindow::showSetting() {
     //show setting
     ui->frame_8->show();
+    update_outputdevice();
     ui->label_13->show();
     //hide main
     ui->frame_9->hide();
@@ -416,6 +436,14 @@ void MainWindow::on_ImportFolder_clicked()
     update_playlist();
 }
 
+void MainWindow::update_outputdevice()
+{
+    ui->listWidget_2->clear();
+    for(auto& device: OutputDevices){
+        ui->listWidget_2->addItem(device.description());
+    }
+}
+
 void MainWindow::Lightblue() {
     ui->frame_5->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;");
     ui->frame_6->setStyleSheet("background-color:   #1A4568   ;border-radius: 25px;");
@@ -643,3 +671,27 @@ void MainWindow::Tokyo() {
     ui->listWidget->setStyleSheet("background-color: transparent; color: #7B007C;");
 
 }
+
+
+void MainWindow::on_listWidget_2_itemDoubleClicked(QListWidgetItem *item)
+{
+    QModelIndex indexItem = ui->listWidget_2->indexFromItem(item);
+    int index = indexItem.row();
+    for(auto& selected: ui->listWidget->selectedItems()){
+        selected->setSelected(false);
+        selected->background().color().fromRgb(0, 0, 0, 0);
+        selected->foreground().color().fromRgb(26, 69, 104);
+    }
+    ui->listWidget_2->itemFromIndex(indexItem)->setSelected(true);
+    auxOut->setDevice(OutputDevices[index]);
+}
+
+
+void MainWindow::on_listWidget_2_itemSelectionChanged()
+{
+    for(auto& selected: ui->listWidget->selectedItems()){
+        selected->background().color().fromRgb(26, 69, 104);
+        selected->foreground().color().fromRgb(255, 255, 255);
+    }
+}
+

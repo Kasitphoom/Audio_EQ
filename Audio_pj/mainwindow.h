@@ -5,6 +5,7 @@
 #include <thread>
 #include <QtMultimedia>
 #include <QListWidgetItem>
+#include <vector>
 #include "eq.h"
 #include "AudioFile.h"
 
@@ -75,6 +76,12 @@ private slots:
 
     void on_ImportFolder_clicked();
 
+    void update_outputdevice();
+
+    void on_listWidget_2_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_listWidget_2_itemSelectionChanged();
+
 private:
     void updateduration(qint64 duration);
 
@@ -87,6 +94,7 @@ private:
     qint64 mediaPos;
 
     QString name;
+    std::vector<QAudioDevice> OutputDevices;
 };
 
 #endif // MAINWINDOW_H
