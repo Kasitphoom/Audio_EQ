@@ -209,9 +209,9 @@ YOUR FEEL'N</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>140</y>
-      <width>361</width>
+      <width>351</width>
       <height>31</height>
      </rect>
     </property>
