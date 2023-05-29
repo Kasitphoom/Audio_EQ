@@ -322,9 +322,15 @@ void MainWindow::on_pushButton_7_clicked()
     std::cout << af->getFileNames()[af->CurrentIndex()] << std::endl;
     media->play();
     playclicked = true;
+    QString next_button_pause_image = "";
+    if (lightblue){
+        next_button_pause_image = "button-pause.png";
+    }else if(tokyo){
+        next_button_pause_image = "button-pause2.png";
+    }
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
-                    background-image: url(:/button-pause.png);\
+                    background-image: url(:/" + next_button_pause_image + ");\
                     background-repeat: no-repeat;\
                     background-position: center;\
                     border: none;\
@@ -365,9 +371,15 @@ void MainWindow::on_pushButton_5_clicked()
     setSource();
     media->play();
     playclicked = true;
+    QString back_button_pause_image = "";
+    if (lightblue){
+        back_button_pause_image = "button-pause.png";
+    }else if(tokyo){
+        back_button_pause_image = "button-pause2.png";
+    }
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
-                    background-image: url(:/button-pause.png);\
+                    background-image: url(:/" + back_button_pause_image + ");\
                     background-repeat: no-repeat;\
                     background-position: center;\
                     border: none;\
