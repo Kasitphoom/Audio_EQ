@@ -279,12 +279,12 @@ void MainWindow::on_pushButton_6_clicked()
             button_pause_image = "button-pause2.png";
         }
         ui->pushButton_6->setStyleSheet(
-                    QString::fromUtf8("QPushButton {\
-                        background-image: url(:/") + button_pause_image + QString::fromUtf8(");\
+                    "QPushButton {\
+                        background-image: url(:/" + button_pause_image + ");\
                         background-repeat: no-repeat;\
                         background-position: center;\
                         border: none;\
-                    }"));
+                    }");
         return;
     }
     media->pause();
@@ -407,9 +407,15 @@ void MainWindow::on_listWidget_itemPressed(QListWidgetItem *item)
     setSource();
     media->play();
     playclicked = true;
+    QString plbutton_pause_image = "";
+    if (lightblue){
+        plbutton_pause_image = "button-pause.png";
+    }else if(tokyo){
+        plbutton_pause_image = "button-pause2.png";
+    }
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
-                    background-image: url(:/button-pause.png);\
+                    background-image: url(:/"+ plbutton_pause_image +");\
                     background-repeat: no-repeat;\
                     background-position: center;\
                     border: none;\
@@ -767,3 +773,5 @@ void MainWindow::scrollText()
     animation->setEndValue(newPos);
     animation->start();
 }
+
+
