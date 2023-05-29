@@ -306,6 +306,7 @@ void MainWindow::update_filename(){
     this->name = File.baseName();
     ui->label_4->setText(this->name);
     ui->label_6->setText(this->name);
+    scrollText();
 }
 
 void MainWindow::on_pushButton_7_clicked()
@@ -752,7 +753,8 @@ void MainWindow::on_listWidget_2_itemSelectionChanged()
 
 void MainWindow::scrollText()
 {
-    if (ui->label_4->text().length() <= 10) {
+    if (ui->label_4->text().length() <= 20) {
+        return;
         if (scrollTimer) {
             scrollTimer->stop();
         }
