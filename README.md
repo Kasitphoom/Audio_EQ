@@ -30,16 +30,16 @@ git clone https://github.com/Kasitphoom/Audio_EQ.git
 5. Run the project
 
 ## FEATURES
-__**Audio formats:**__ Plays various audio formats, including MP3, WAV, FLAC, and more.
-__**Audio file imports:**__ Allows users to import audio files.
-__**Audio folder import:**__ Allow users to import folders which contain audio files to play like music playlists.
-__**Controls:**__ Provides control over playback options such as play/pause, shuffle, previous and next.
-__**Interface:**__ Displays song information and time stamp bar for an enhanced listening experience.
-__**Customizable Interface:**__ Allow users to change theme and language of the application
-__**Playlist:**__ Show lists of songs in the folder to select and plays
-__**Themes:**__ Users can change themes inside the application.
-__**Bilingual**__: We provided both Thai and English user interface.
-__**Scrolling Song Name**__: Long song name will be scrolled to be able to fully display.
+<u></u>**Audio formats:**</u> Plays various audio formats, including MP3, WAV, FLAC, and more.
+<u>**Audio file imports:**</u> Allows users to import audio files.
+<u>**Audio folder import:**</u> Allow users to import folders which contain audio files to play like music playlists.
+<u>**Controls:**</u> Provides control over playback options such as play/pause, shuffle, previous and next.
+<u>**Interface:**</u> Displays song information and time stamp bar for an enhanced listening experience.
+<u>**Customizable Interface:**</u> Allow users to change theme and language of the application
+<u>**Playlist:**</u> Show lists of songs in the folder to select and plays
+<u>**Themes:**</u> Users can change themes inside the application.
+<u>**Bilingual**</u>: We provided both Thai and English user interface.
+<u>**Scrolling Song Name**</u>: Long song name will be scrolled to be able to fully display.
 
 ## CLASS DIAGRAM
 ![Class Diagram](/ClassDiagram.png)
