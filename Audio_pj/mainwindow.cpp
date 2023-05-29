@@ -6,12 +6,14 @@
 #include <QCoreApplication>
 #include <QFileDialog>
 #include <QAudioDevice>
+#include <QMessageBox>
 #include <iostream>
 #include "eq.h"
 
 static bool setting_open = false;
 static bool playlist_click = false;
 static bool playclicked = false;
+static bool fileMode = true;
 static QString clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #FFFFFF;}QPushButton:hover {color: #FFFFFF}";
 static QString not_clicked = "QPushButton {font-style: normal;font-weight: 2000;font-size: 16px;line-height: 24px;text-align: left;color: #5F84A1;}QPushButton:hover {color: rgb(158, 170, 189)}";
 
@@ -257,7 +259,8 @@ void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 void MainWindow::on_pushButton_6_clicked()
 {
     if (af->getFilesFullPath().size() == 0){
-
+        QMessageBox::critical(this, tr("VIBIN STUDIO APPLICATION"), tr("NO FILE EXIST\n\nin folder\n\nPlease import file to play"), QMessageBox::Ok);
+        return;
     }
     update_filename();
     if(!playclicked){
@@ -294,6 +297,10 @@ void MainWindow::update_filename(){
 
 void MainWindow::on_pushButton_7_clicked()
 {
+    if (af->getFilesFullPath().size() == 0){
+        QMessageBox::critical(this, tr("VIBIN STUDIO APPLICATION"), tr("NO FILE EXIST\n\nin folder\n\nPlease import file to play"), QMessageBox::Ok);
+        return;
+    }
     std::cout << "Skip" <<std::endl;
     af->Next();
     update_filename();
@@ -335,6 +342,10 @@ void MainWindow::on_horizontalSlider_sliderReleased()
 
 void MainWindow::on_pushButton_5_clicked()
 {
+    if (af->getFilesFullPath().size() == 0){
+        QMessageBox::critical(this, tr("VIBIN STUDIO APPLICATION"), tr("NO FILE EXIST\n\nin folder auid_cache\n\nPlease import file to play"), QMessageBox::Ok);
+        return;
+    }
     af->Previous();
     update_filename();
     setSource();
@@ -394,24 +405,35 @@ void MainWindow::on_ImportFile_clicked()
     QFile file(fileName);
     QFileInfo fileinfo(fileName);
 
-    QString dest = QString::fromUtf8(af->getFilePath().c_str());\
-
-    QFileInfo destInfo(dest);
-    QString destPath(destInfo.path());
-    QDir destDir(destPath);
-
-    if(!destDir.exists()){
-        std::cout << destDir.path().toStdString() << " does not exist" << std::endl;
-        return;
-    }
-
-    std::cout << "Destination path: " << dest.toStdString() << std::endl;
 
     if (file.exists()) {
+        af = new AF::AudioFileCache();
+
+        if(!fileMode){
+            int info = QMessageBox::information(this, tr("MODE CHANGE"), tr("You will be prompt to use file mode after this. \n\n Are you sure to change?"), QMessageBox::Ok | QMessageBox::Cancel);
+            switch(info){
+                case QMessageBox::Cancel:
+                    std::cout << "cancel" << std::endl;
+                    return;
+            }
+        }
+        QString dest = QString::fromUtf8(af->getFilePath().c_str());\
+        QFileInfo destInfo(dest);
+        QString destPath(destInfo.path());
+        QDir destDir(destPath);
+
+        if(!destDir.exists()){
+            std::cout << destDir.path().toStdString() << " does not exist" << std::endl;
+            return;
+        }
+        std::cout << "Destination path: " << dest.toStdString() << std::endl;
+
+
         if (file.copy(dest + QDir::separator() + fileinfo.fileName())) {
             std::cout << "Success move file: " << file.fileName().toStdString() << " to " << (dest + QDir::separator() + fileinfo.fileName()).toStdString() << std::endl;
             af->UpdateFiles();
             update_playlist();
+            setSource();
             return;
         } else {
             std::cout << "Failed to move file" << file.fileName().toStdString() << " to " << (dest + QDir::separator() + fileinfo.fileName()).toStdString() << std::endl;
@@ -433,6 +455,7 @@ void MainWindow::on_ImportFolder_clicked()
     ui->listWidget->clear();
     af = new AF::AudioFileCustom(filename.toStdString());
     update_playlist();
+    fileMode = false;
 }
 
 void MainWindow::update_outputdevice()
