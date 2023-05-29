@@ -817,7 +817,7 @@ color: #FFFFFF;</string>
        <rect>
         <x>30</x>
         <y>60</y>
-        <width>93</width>
+        <width>101</width>
         <height>29</height>
        </rect>
       </property>
@@ -908,9 +908,9 @@ border-radius: 25px;;</string>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>10</y>
-        <width>101</width>
+        <width>111</width>
         <height>31</height>
        </rect>
       </property>
@@ -1388,7 +1388,7 @@ color: rgb(26, 69, 104);</string>
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>101</width>
+       <width>41</width>
        <height>16</height>
       </rect>
      </property>
@@ -1410,9 +1410,9 @@ color: rgb(26, 69, 104);</string>
     <widget class="QLabel" name="total_time">
      <property name="geometry">
       <rect>
-       <x>268</x>
+       <x>328</x>
        <y>100</y>
-       <width>101</width>
+       <width>41</width>
        <height>20</height>
       </rect>
      </property>
