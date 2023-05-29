@@ -9,9 +9,6 @@
 
 namespace fs = std::filesystem;
 
-//QT_BEGIN_NAMESPACE
-//namespace AF {class AudioFile;}
-//QT_END_NAMESPACE
 namespace AF{
 class AudioFile{
     protected:
