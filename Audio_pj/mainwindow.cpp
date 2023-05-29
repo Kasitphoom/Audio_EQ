@@ -265,20 +265,32 @@ void MainWindow::on_pushButton_6_clicked()
     if(!playclicked){
         media->play();
         playclicked = true;
+        QString button_pause_image = "";
+        if (lightblue){
+            button_pause_image = "button-pause.png";
+        }else if(tokyo){
+            button_pause_image = "button-pause2.png";
+        }
         ui->pushButton_6->setStyleSheet(
-                    "QPushButton {\
-                        background-image: url(:/button-pause.png);\
+                    QString::fromUtf8("QPushButton {\
+                        background-image: url(:/") + button_pause_image + QString::fromUtf8(");\
                         background-repeat: no-repeat;\
                         background-position: center;\
                         border: none;\
-                    }");
+                    }"));
         return;
     }
     media->pause();
     playclicked = false;
+    QString button_play_image = "";
+    if (lightblue){
+        button_play_image = "button-play-solid.png";
+    }else if(tokyo){
+        button_play_image = "button-play-solid2.png";
+    }
     ui->pushButton_6->setStyleSheet(
                 "QPushButton {\
-                    background-image: url(:/button-play-solid.png);\
+                    background-image: url(:/" + button_play_image + ");\
                     background-repeat: no-repeat;\
                     background-position: center;\
                     border: none;\
@@ -517,8 +529,14 @@ void MainWindow::Lightblue() {
         background-position: center;\
         border: none;\
     }");
+    QString button_after_changed = "";
+    if(media->playbackState()==0 || media->playbackState()==2){
+        button_after_changed = "button-play-solid.png";
+    }else{
+        button_after_changed = "button-pause.png";
+    }
     ui->pushButton_6->setStyleSheet("QPushButton {\
-        background-image: url(:/button-play-solid.png);\
+        background-image: url(:/" + button_after_changed + ");\
         background-repeat: no-repeat;\
         background-position: center;\
         border: none;\
@@ -631,8 +649,14 @@ void MainWindow::Tokyo() {
         background-position: center;\
         border: none;\
     }");
+    QString button_after_changed = "";
+    if(media->playbackState()==0 || media->playbackState()==2){
+        button_after_changed = "button-play-solid2.png";
+    }else{
+        button_after_changed = "button-pause2.png";
+    }
     ui->pushButton_6->setStyleSheet("QPushButton {\
-        background-image: url(:/button-play-solid2.png);\
+        background-image: url(:/" + button_after_changed + ");\
         background-repeat: no-repeat;\
         background-position: center;\
         border: none;\
