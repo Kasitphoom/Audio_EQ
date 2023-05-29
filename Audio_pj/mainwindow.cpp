@@ -30,11 +30,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     scrollTimer = new QTimer(this);
 
-    animation = new QPropertyAnimation(ui->label_4, "pos", this);
-
-    connect(scrollTimer, SIGNAL(timeout()), this, SLOT(scrollText()));
-    scrollTimer->start(50);
-
     const auto devices = QMediaDevices::audioOutputs();
     for (const QAudioDevice &device : devices){
         OutputDevices.push_back(device);
@@ -68,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(myclicked(music))); // push play button to change the [Music Name]
 
+    connect(scrollTimer, SIGNAL(timeout()), this, SLOT(scrollText()));
 
     ui->pushButton_14->setStyleSheet(clicked);
     ui->pushButton_28->setStyleSheet(clicked);
@@ -756,21 +752,24 @@ void MainWindow::on_listWidget_2_itemSelectionChanged()
 
 void MainWindow::scrollText()
 {
-    // Get the current position of the label
-    QPoint currentPos = ui->label_4->pos();
+    if (ui->label_4->text().length() <= 10) {
+        if (scrollTimer) {
+            scrollTimer->stop();
+        }
+    } else {
+        if (scrollTimer && !scrollTimer->isActive()) {
+            scrollTimer->start(250);
+        }
+    }
 
-    // Calculate the new position by moving it one pixel to the left
-    QPoint newPos(currentPos.x() - 1, currentPos.y());
+    // Get the current text of the label
+    QString labelText = ui->label_4->text();
 
-    // Reset the position if it goes beyond the label width
-    if (newPos.x() <= -ui->label_4->width())
-        newPos.setX(width());
+    // Shift the text by one character to the left
+    QString newText = labelText.mid(1) + labelText.at(0);
 
-    // Animate the label to the new position
-    animation->setDuration(10);  // Adjust the duration as per your preference
-    animation->setStartValue(currentPos);
-    animation->setEndValue(newPos);
-    animation->start();
+    // Set the new text to the label
+    ui->label_4->setText(newText);
 }
 
 

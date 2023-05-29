@@ -6,7 +6,6 @@
 #include <QtMultimedia>
 #include <QListWidgetItem>
 #include <QTimer>
-#include <QPropertyAnimation>
 #include <vector>
 #include "AudioFile.h"
 
