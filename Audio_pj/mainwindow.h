@@ -6,14 +6,12 @@
 #include <QtMultimedia>
 #include <QListWidgetItem>
 #include <vector>
-#include "eq.h"
 #include "AudioFile.h"
 
 static bool en = true;
 static bool th = false;
 static bool tokyo = false;
 static bool lightblue = true;
-static EQ* eq;
 static int setting = 0;
 
 QT_BEGIN_NAMESPACE
@@ -85,7 +83,6 @@ private:
     void updateduration(qint64 duration);
 
     Ui::MainWindow *ui;
-    EQ *eq;
     QMediaPlayer *media;
     QAudioOutput *auxOut;
     AF::AudioFile* af;

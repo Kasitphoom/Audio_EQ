@@ -8,7 +8,6 @@
 #include <QAudioDevice>
 #include <QMessageBox>
 #include <iostream>
-#include "eq.h"
 
 static bool setting_open = false;
 static bool playlist_click = false;
