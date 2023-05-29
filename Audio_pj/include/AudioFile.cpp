@@ -1,6 +1,7 @@
 #include "AudioFile.h"
 #define FILE_CACHE_PATH "audio_cache"
 #include <iostream>
+#include <random>
 
 void AF::AudioFile::FileInit() {
     AudioFile::InitCacheDir();
@@ -58,7 +59,8 @@ void AF::AudioFile::InitCacheDir(){
 
 void AF::AudioFile::Shuffle()
 {
-    std::random_shuffle(filesData.begin(), filesData.end());
+    std::mt19937 generator(std::random_device{}());
+    std::shuffle(filesData.begin(), filesData.end(), generator);
 }
 
 void AF::AudioFile::UpdateFiles()

@@ -1077,7 +1077,7 @@ color: rgb(26, 69, 104);</string>
       <x>10</x>
       <y>510</y>
       <width>381</width>
-      <height>271</height>
+      <height>261</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1181,7 +1181,7 @@ color: rgb(26, 69, 104);</string>
       <rect>
        <x>10</x>
        <y>81</y>
-       <width>353</width>
+       <width>361</width>
        <height>22</height>
       </rect>
      </property>
@@ -1485,6 +1485,7 @@ color: #1A4568;</string>
 color: rgb(26, 69, 104);</string>
     </property>
    </widget>
+   <zorder>frame_8</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>pushButton</zorder>
@@ -1499,7 +1500,6 @@ color: rgb(26, 69, 104);</string>
    <zorder>frame_9</zorder>
    <zorder>label_13</zorder>
    <zorder>listWidget</zorder>
-   <zorder>frame_8</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
