@@ -31,7 +31,6 @@ git clone https://github.com/Kasitphoom/Audio_EQ.git
 
 ## FEATURES
 - _**Audio formats:**_ Plays various audio formats, including MP3, WAV, FLAC, and more.
-     --------------
 - _**Audio file imports:**_ Allows users to import audio files.
 - _**Audio folder import:**_ Allow users to import folders which contain audio files to play like music playlists.
 - _**Controls:**_ Provides control over playback options such as play/pause, shuffle, previous and next.
