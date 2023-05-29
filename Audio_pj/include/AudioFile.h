@@ -15,8 +15,8 @@ class AudioFile{
         std::vector<fs::path> filesData;
         int index = 0;
     public:
-        AudioFile(){};
-        virtual ~AudioFile(){};
+        AudioFile() = default;
+        virtual ~AudioFile() = default;
         void FileInit();
         void FileInit(std::string path);
         std::vector<char*> getFileNames() const;
@@ -33,7 +33,7 @@ class AudioFile{
 
 class AudioFileCache: public AudioFile{
     public:
-        AudioFileCache(){AudioFile::FileInit();};
+        AudioFileCache(){AudioFile::FileInit();}
         virtual ~AudioFileCache(){
             filesData.clear();
         };
@@ -43,7 +43,7 @@ class AudioFileCache: public AudioFile{
 
 class AudioFileCustom: public AudioFile{
     public:
-        AudioFileCustom(std::string path){AudioFile::FileInit(path);};
+        AudioFileCustom(std::string path){AudioFile::FileInit(path);}
         virtual ~AudioFileCustom(){
             filesData.clear();
         };
