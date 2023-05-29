@@ -5,14 +5,13 @@
 #include <thread>
 #include <QtMultimedia>
 #include <QListWidgetItem>
-#include "eq.h"
+#include <vector>
 #include "AudioFile.h"
 
 static bool en = true;
 static bool th = false;
 static bool tokyo = false;
 static bool lightblue = true;
-static EQ* eq;
 static int setting = 0;
 
 QT_BEGIN_NAMESPACE
@@ -74,11 +73,16 @@ private slots:
 
     void on_ImportFolder_clicked();
 
+    void update_outputdevice();
+
+    void on_listWidget_2_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_listWidget_2_itemSelectionChanged();
+
 private:
     void updateduration(qint64 duration);
 
     Ui::MainWindow *ui;
-    EQ *eq;
     QMediaPlayer *media;
     QAudioOutput *auxOut;
     AF::AudioFile* af;
@@ -86,6 +90,7 @@ private:
     qint64 mediaPos;
 
     QString name;
+    std::vector<QAudioDevice> OutputDevices;
 };
 
 #endif // MAINWINDOW_H
