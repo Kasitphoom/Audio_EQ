@@ -766,12 +766,15 @@ void MainWindow::scrollText()
 
     // Get the current text of the label
     QString labelText = ui->label_4->text();
+    QString labelText2 = ui->label_6->text();
 
     // Shift the text by one character to the left
     QString newText = labelText.mid(1) + labelText.at(0);
+    QString newText2 = labelText2.mid(1) + labelText2.at(0);
 
     // Set the new text to the label
     ui->label_4->setText(newText);
+    ui->label_6->setText(newText2);
 }
 
 
