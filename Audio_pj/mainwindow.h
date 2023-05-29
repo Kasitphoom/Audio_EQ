@@ -5,6 +5,8 @@
 #include <thread>
 #include <QtMultimedia>
 #include <QListWidgetItem>
+#include <QTimer>
+#include <QPropertyAnimation>
 #include <vector>
 #include "AudioFile.h"
 
@@ -79,6 +81,8 @@ private slots:
 
     void on_listWidget_2_itemSelectionChanged();
 
+    void scrollText();
+
 private:
     void updateduration(qint64 duration);
 
@@ -86,6 +90,8 @@ private:
     QMediaPlayer *media;
     QAudioOutput *auxOut;
     AF::AudioFile* af;
+    QTimer *scrollTimer;
+    QPropertyAnimation *animation;
 
     qint64 mediaPos;
 

@@ -28,6 +28,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     auxOut = new QAudioOutput();
 
+    scrollTimer = new QTimer(this);
+
+    animation = new QPropertyAnimation(ui->label_4, "pos", this);
+
+    connect(scrollTimer, SIGNAL(timeout()), this, SLOT(scrollText()));
+    scrollTimer->start(50);
+
     const auto devices = QMediaDevices::audioOutputs();
     for (const QAudioDevice &device : devices){
         OutputDevices.push_back(device);
@@ -742,3 +749,21 @@ void MainWindow::on_listWidget_2_itemSelectionChanged()
     }
 }
 
+void MainWindow::scrollText()
+{
+    // Get the current position of the label
+    QPoint currentPos = ui->label_4->pos();
+
+    // Calculate the new position by moving it one pixel to the left
+    QPoint newPos(currentPos.x() - 1, currentPos.y());
+
+    // Reset the position if it goes beyond the label width
+    if (newPos.x() <= -ui->label_4->width())
+        newPos.setX(width());
+
+    // Animate the label to the new position
+    animation->setDuration(10);  // Adjust the duration as per your preference
+    animation->setStartValue(currentPos);
+    animation->setEndValue(newPos);
+    animation->start();
+}
