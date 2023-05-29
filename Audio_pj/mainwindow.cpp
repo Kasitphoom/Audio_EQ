@@ -755,9 +755,6 @@ void MainWindow::scrollText()
 {
     if (ui->label_4->text().length() <= 20) {
         return;
-        if (scrollTimer) {
-            scrollTimer->stop();
-        }
     } else {
         if (scrollTimer && !scrollTimer->isActive()) {
             scrollTimer->start(250);
