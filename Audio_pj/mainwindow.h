@@ -29,51 +29,47 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    // ======Custom made functions====== //
+    // Utils
     double map(double value, double min1, double max1, double min2, double max2);
-    void on_pushButton_8_clicked();
     void showMain();
     void showSetting();
-    void on_pushButton_27_clicked();
-    void on_pushButton_14_clicked();
+    void update_filename();
+    void setSource();
+    void update_playlist();
+    void update_outputdevice();
+
+    // Themes
     void Tokyo();
     void Lightblue();
-    void on_pushButton_29_clicked();
 
-    void on_pushButton_28_clicked();
-
-    void on_horizontalSlider_2_valueChanged(int value);
-
-    void on_pushButton_6_clicked();
-
-    void update_filename();
-
-    void on_pushButton_7_clicked();
-
-    void setSource();
-
+    // List
     void durationChanged(qint64 duration);
     void positionChanged(qint64 pos);
 
-    void on_horizontalSlider_valueChanged(int value);
+    // ======QT made functions====== //
 
-    void on_horizontalSlider_sliderPressed();
-
-    void on_horizontalSlider_sliderReleased();
-
+    void on_pushButton_clicked();
+    void on_pushButton_8_clicked();    
+    void on_pushButton_27_clicked();
+    void on_pushButton_14_clicked();    
+    void on_pushButton_29_clicked();
+    void on_pushButton_28_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_7_clicked();
     void on_pushButton_5_clicked();
-
     void on_Shuffle_btn_clicked();
-
-    void update_playlist();
-
-    void on_listWidget_itemPressed(QListWidgetItem *item);
-
     void on_ImportFile_clicked();
-
     void on_ImportFolder_clicked();
 
-    void update_outputdevice();
+    void on_horizontalSlider_valueChanged(int value);
+    void on_horizontalSlider_2_valueChanged(int value);
+
+    void on_horizontalSlider_sliderPressed();
+    void on_horizontalSlider_sliderReleased();
+
+
+    void on_listWidget_itemPressed(QListWidgetItem *item);
 
     void on_listWidget_2_itemDoubleClicked(QListWidgetItem *item);
 
